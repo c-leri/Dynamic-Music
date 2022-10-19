@@ -5,7 +5,8 @@
 	"name": "Dynamic Music",
 	"description": "Adds more dynamic music ques, and more music itself for that!",
 	"authors": [
-		"LudoCrypt"
+		"LudoCrypt",
+		"celeri"
 	],
 	"contact": {
 		"homepage": "https://www.curseforge.com/minecraft/mc-mods/dynamic-music",
@@ -27,8 +28,9 @@
 		"dynmus.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.7.4",
+		"fabricloader": ">=0.14.6",
 		"fabric": "*",
-		"minecraft": "1.18.x"
+		"minecraft": "1.19.x",
+		"java": ">=17"
 	}
 }

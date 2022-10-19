@@ -37,7 +37,7 @@ public class PositionedSoundInstanceMixin {
 					double maxPitch = MathHelper.lerp(random.nextDouble(), minPitch / 3, random.nextDouble() * -1);
 					double note = MathHelper.lerp(random.nextDouble(), config.dynamicPitchFaster ? -minPitch : minPitch, config.dynamicPitchFaster ? -maxPitch : maxPitch);
 					double newPitch = Math.pow(2.0D, note / 12.0D);
-					ci.setReturnValue(new PositionedSoundInstance(music.getId(), SoundCategory.MUSIC, 1.0F, (float) newPitch, false, 0, SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D, true));
+					ci.setReturnValue(new PositionedSoundInstance(music.getId(), SoundCategory.MUSIC, 1.0F, (float) newPitch, SoundInstance.createRandom(), false, 0, SoundInstance.AttenuationType.NONE, 0.0D, 0.0D, 0.0D, true));
 				}
 			}
 		}

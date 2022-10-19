@@ -10,7 +10,7 @@
 	"music.hot": {
 		"sounds": [
 			{
-				"name": "music.nice",
+				"name": "dynmus:music.nice",
 				"type": "event"
 			}
 		]
@@ -33,6 +33,26 @@
 				"name": "records/13",
 				"stream": true,
 				"weight": 2
+			},
+			{
+				"name": "music/game/ancestry",
+				"stream": true
+			},
+			{
+				"name": "music/game/an_ordinary_day",
+				"stream": true
+			},
+			{
+				"name": "music/game/infinite_amethyst",
+				"stream": true
+			},
+			{
+				"name": "music/game/left_to_bloom",
+				"stream": true
+			},
+			{
+				"name": "music/game/wending",
+				"stream": true
 			}
 		]
 	},
@@ -65,6 +85,22 @@
 			{
 				"name": "music/game/piano3",
 				"stream": true
+			},
+			{
+				"name": "music/game/aerie",
+				"stream": true
+			},
+			{
+				"name": "music/game/firebugs",
+				"stream": true
+			},
+			{
+				"name": "music/game/floating_dream",
+				"stream": true
+			},
+			{
+				"name": "music/game/stand_tall",
+				"stream": true
 			}
 		]
 	},
@@ -93,6 +129,18 @@
 			{
 				"name": "music/game/piano3",
 				"stream": true
+			},
+			{
+				"name": "music/game/comforting_memories",
+				"stream": true
+			},
+			{
+				"name": "music/game/labyrinthine",
+				"stream": true
+			},
+			{
+				"name": "music/game/one_more_day",
+				"stream": true
 			}
 		]
 	},
@@ -107,7 +155,7 @@
 	"music.hot.creative": {
 		"sounds": [
 			{
-				"name": "music.nice",
+				"name": "dynmus:music.nice",
 				"type": "event"
 			},
 			{
@@ -119,21 +167,8 @@
 	"music.cave.creative": {
 		"sounds": [
 			{
-				"name": "music/game/nuance1",
-				"stream": true
-			},
-			{
-				"name": "music/game/nuance2",
-				"stream": true
-			},
-			{
-				"name": "music/game/piano1",
-				"stream": true
-			},
-			{
-				"name": "records/13",
-				"stream": true,
-				"weight": 2
+				"name": "dynmus:music.cave",
+				"type": "event"
 			},
 			{
 				"name": "music/game/creative/creative3",
@@ -144,32 +179,8 @@
 	"music.down.creative": {
 		"sounds": [
 			{
-				"name": "music/game/calm2",
-				"stream": true
-			},
-			{
-				"name": "music/game/hal1",
-				"stream": true
-			},
-			{
-				"name": "music/game/hal2",
-				"stream": true
-			},
-			{
-				"name": "music/game/nuance1",
-				"stream": true
-			},
-			{
-				"name": "music/game/nuance2",
-				"stream": true
-			},
-			{
-				"name": "music/game/piano1",
-				"stream": true
-			},
-			{
-				"name": "music/game/piano3",
-				"stream": true
+				"name": "dynmus:music.down",
+				"type": "event"
 			},
 			{
 				"name": "music/game/creative/creative1",
@@ -184,28 +195,8 @@
 	"music.nice.creative": {
 		"sounds": [
 			{
-				"name": "music/game/calm1",
-				"stream": true
-			},
-			{
-				"name": "music/game/calm3",
-				"stream": true
-			},
-			{
-				"name": "music/game/hal3",
-				"stream": true
-			},
-			{
-				"name": "music/game/hal4",
-				"stream": true
-			},
-			{
-				"name": "music/game/piano2",
-				"stream": true
-			},
-			{
-				"name": "music/game/piano3",
-				"stream": true
+				"name": "dynmus:music.nice",
+				"type": "event"
 			},
 			{
 				"name": "music/game/creative/creative2",

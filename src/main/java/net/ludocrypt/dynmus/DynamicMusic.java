@@ -10,7 +10,8 @@ import net.minecraft.block.Material;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
 import net.minecraft.world.World;
 
 public class DynamicMusic implements ClientModInitializer {
@@ -36,7 +37,7 @@ public class DynamicMusic implements ClientModInitializer {
 
 	private static SoundEvent add(String id) {
 		Identifier realId = id(id);
-		SoundEvent sound = new SoundEvent(realId);
+		SoundEvent sound = SoundEvent.of(realId);
 		SOUND_EVENTS.put(realId, sound);
 		return sound;
 	}
@@ -45,7 +46,7 @@ public class DynamicMusic implements ClientModInitializer {
 	public void onInitializeClient() {
 		DynamicMusicConfig.init();
 		for (Identifier id : SOUND_EVENTS.keySet()) {
-			Registry.register(Registry.SOUND_EVENT, id, SOUND_EVENTS.get(id));
+			Registry.register(Registries.SOUND_EVENT, id, SOUND_EVENTS.get(id));
 		}
 	}
 

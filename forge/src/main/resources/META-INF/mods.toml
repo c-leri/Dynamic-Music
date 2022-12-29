@@ -1,0 +1,41 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+issueTrackerURL = "https://github.com/celestomm/Dynamic-Music/issues"
+license = "LGPLv3"
+
+[[mods]]
+modId = "dynmus"
+version = "${version}"
+displayName = "Dynamic Music"
+authors = "LudoCrypt, celeri"
+description = "Adds more dynamic music ques, and more music itself for that!"
+logoFile = "icon.png"
+displayTest = "IGNORE_ALL_VERSION"
+
+[[dependencies.dynmus]]
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.dynmus]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.dynmus]]
+modId = "architectury"
+mandatory = true
+versionRange = "[6.2.43,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[dependencies.dynmus]]
+modId = "configuration"
+mandatory = true
+versionRange = "[2.0.0,)"
+ordering = "AFTER"
+side = "CLIENT"

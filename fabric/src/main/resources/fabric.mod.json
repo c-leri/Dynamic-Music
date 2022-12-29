@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "dynmus",
+  "version": "${version}",
+  "name": "Dynamic Music",
+  "description": "Adds more dynamic music ques, and more music itself for that!",
+  "authors": [
+    "LudoCrypt",
+    "celeri"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/dynamic-music-updated",
+    "sources": "https://github.com/celestomm/Dynamic-Music",
+    "issues": "https://github.com/celestomm/Dynamic-Music/issues"
+  },
+  "license": "LGPLv3",
+  "icon": "icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.celeri.dynmus.fabric.DynamicMusicFabric"
+    ],
+    "modmenu": [
+      "net.celeri.dynmus.fabric.config.DynamicMusicModMenuCompat"
+    ]
+  },
+  "mixins": [
+    "dynmus.mixins.json",
+    "dynmus-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.2",
+    "architectury": ">=6.2.43",
+    "modmenu": ">=4.0.6",
+    "cloth-config": ">=8.0.75"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.celeri.dynmus.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "BiomeAmbientSoundsHandlerMixin",
+    "MinecraftClientMixin",
+    "SimpleSoundInstanceMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

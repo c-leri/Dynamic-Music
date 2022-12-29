@@ -3,7 +3,7 @@ package net.celeri.dynmus;
 import dev.architectury.registry.registries.DeferredRegister;
 import net.celeri.dynmus.config.DynamicMusicConfig;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
@@ -39,7 +39,7 @@ public class DynamicMusic {
 
     private static SoundEvent add(String path) {
         ResourceLocation location = new ResourceLocation("dynmus", path);
-        SoundEvent sound = new SoundEvent(location);
+        SoundEvent sound = SoundEvent.createVariableRangeEvent(location);
         SOUND_EVENTS.put(location, sound);
         return sound;
     }
@@ -47,7 +47,7 @@ public class DynamicMusic {
     public static void init(DynamicMusicConfig config) {
         DynamicMusic.config = config;
 
-        DeferredRegister<SoundEvent> SOUND_EVENTS_REGISTER = DeferredRegister.create(MOD_ID, Registry.SOUND_EVENT_REGISTRY);
+        DeferredRegister<SoundEvent> SOUND_EVENTS_REGISTER = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
         for (ResourceLocation location : DynamicMusic.SOUND_EVENTS.keySet()) {
             SOUND_EVENTS_REGISTER.register(location.getPath(), () -> SOUND_EVENTS.get(location));
         }

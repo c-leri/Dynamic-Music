@@ -15,27 +15,27 @@ displayTest = "IGNORE_ALL_VERSION"
 [[dependencies.dynmus]]
 modId = "forge"
 mandatory = true
-versionRange = "[43,)"
+versionRange = "[44,)"
 ordering = "NONE"
 side = "CLIENT"
 
 [[dependencies.dynmus]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.2,)"
+versionRange = "[1.19.3,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.dynmus]]
 modId = "architectury"
 mandatory = true
-versionRange = "[6.2.43,)"
+versionRange = "[7.0.64,)"
 ordering = "AFTER"
 side = "CLIENT"
 
 [[dependencies.dynmus]]
 modId = "configuration"
 mandatory = true
-versionRange = "[2.0.0,)"
+versionRange = "[2.1.0,)"
 ordering = "AFTER"
 side = "CLIENT"

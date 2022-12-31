@@ -25,4 +25,4 @@ This mod includes several musics composed by LudoCrypt that play in the End dime
    - [Boats and Butterflies](https://ludocrypt.bandcamp.com/track/boats-and-butterflies)
    - [Eccedentesiant](https://ludocrypt.bandcamp.com/track/eccedentesiast)
 
-You can find the list of all the musics played in the overworld in [this file](https://github.com/c-leri/Dynamic-Music/blob/1.19.2-architectury/OVERWORLD_MUSIC.md)
+You can find the list of all the musics played in the overworld in [this file](https://github.com/c-leri/Dynamic-Music/blob/1.19.3-architectury/OVERWORLD_MUSIC.md)

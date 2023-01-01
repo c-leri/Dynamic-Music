@@ -26,11 +26,11 @@
 				"stream": true
 			},
 			{
-				"name": "minecraft:music/game/aerie",
+				"name": "minecraft:music/game/swamp/aerie",
 				"stream": true
 			},
 			{
-				"name": "minecraft:music/game/firebugs",
+				"name": "minecraft:music/game/swamp/firebugs",
 				"stream": true
 			},
 			{
@@ -38,7 +38,7 @@
 				"stream": true
 			},
 			{
-				"name": "minecraft:music/game/labyrinthine",
+				"name": "minecraft:music/game/swamp/labyrinthine",
 				"stream": true
 			},
 			{
@@ -62,7 +62,7 @@
 				"stream": true
 			},
 			{
-				"name": "minecraft:music/game/aerie",
+				"name": "minecraft:music/game/swamp/aerie",
 				"stream": true
 			},
 			{
@@ -119,7 +119,7 @@
 				"stream": true
 			},
 			{
-				"name": "minecraft:music/game/labyrinthine",
+				"name": "minecraft:music/game/swamp/labyrinthine",
 				"stream": true
 			},
 			{
@@ -159,7 +159,7 @@
 				"stream": true
 			},
 			{
-				"name": "minecraft:music/game/firebugs",
+				"name": "minecraft:music/game/swamp/firebugs",
 				"stream": true
 			},
 			{

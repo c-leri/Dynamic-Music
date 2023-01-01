@@ -26,7 +26,7 @@ public class MinecraftClientMixin {
 
     @Inject(method = "getSituationalMusic", at = @At("RETURN"), cancellable = true)
     private void dynmus$getSituationalMusic(CallbackInfoReturnable<Music> ci) {
-        if (ci.getReturnValue().equals(Musics.GAME) && this.level.dimension() == Level.OVERWORLD) {
+        if (ci.getReturnValue() == Musics.GAME && this.level.dimension() == Level.OVERWORLD) {
             if (this.level != null) {
                 if (DynamicMusic.isInCave(level, player.blockPosition(), DynamicMusic.config) && DynamicMusic.config.caveMusic()) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_CAVE));
@@ -40,7 +40,7 @@ public class MinecraftClientMixin {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_NICE));
                 }
             }
-        } else if (ci.getReturnValue().equals(Musics.CREATIVE) && this.level.dimension() == Level.OVERWORLD) {
+        } else if (ci.getReturnValue() == Musics.CREATIVE && this.level.dimension() == Level.OVERWORLD) {
             if (this.level != null) {
                 if (DynamicMusic.isInCave(level, player.blockPosition(), DynamicMusic.config) && DynamicMusic.config.caveMusic()) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_CAVE_CREATIVE));

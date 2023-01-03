@@ -33,7 +33,7 @@
   "dynmus.midnightconfig.stonePercent.tooltip": "Percent of stone to trigger cave detection",
   "dynmus.midnightconfig.mineshaftDetectionTitle": "§l§nMineshaft Detection",
   "dynmus.midnightconfig.pseudoMineshaftSearchRange": "Search Range",
-  "dynmus.midnightconfig.pseudoMineshaftSearchRange.tooltip": "Number of blocks in each direction\n0 disables mineshaft detection\nUsed to accelerate the activation of 'Dynamic Pitch' in mineshaft.",
+  "dynmus.midnightconfig.pseudoMineshaftSearchRange.tooltip": "Number of blocks in each direction\n0 disables mineshaft detection\nUsed to accelerate the activation of 'Dynamic Pitch' in mineshafts",
   "dynmus.midnightconfig.pseudoMineshaftPercent": "Mineshaft Percent",
   "dynmus.midnightconfig.pseudoMineshaftPercent.tooltip": "Percent of mineshaft blocks for mineshaft detection"
 }

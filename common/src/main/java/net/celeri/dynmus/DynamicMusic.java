@@ -2,6 +2,7 @@ package net.celeri.dynmus;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import net.celeri.dynmus.config.DynamicMusicConfig;
+import net.celeri.dynmus.util.DynamicMusicHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -11,43 +12,25 @@ import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Material;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class DynamicMusic {
     public static final String MOD_ID = "dynmus";
 
-    private static final Map<ResourceLocation, SoundEvent> SOUND_EVENTS = new LinkedHashMap<>();
-
-    public static final SoundEvent MUSIC_COLD = add("music.cold");
-    public static final SoundEvent MUSIC_HOT = add("music.hot");
-    public static final SoundEvent MUSIC_CAVE = add("music.cave");
-
-    public static final SoundEvent MUSIC_NICE = add("music.nice");
-    public static final SoundEvent MUSIC_DOWN = add("music.down");
-
-    public static final SoundEvent MUSIC_COLD_CREATIVE = add("music.cold.creative");
-    public static final SoundEvent MUSIC_HOT_CREATIVE = add("music.hot.creative");
-    public static final SoundEvent MUSIC_CAVE_CREATIVE = add("music.cave.creative");
-
-    public static final SoundEvent MUSIC_NICE_CREATIVE = add("music.nice.creative");
-    public static final SoundEvent MUSIC_DOWN_CREATIVE = add("music.down.creative");
-
-    public static final SoundEvent MUSIC_END_CREATIVE = add("music.end.creative");
-    public static final SoundEvent MUSIC_END_BOSS = add("music.end.boss");
-
-    private static SoundEvent add(String path) {
-        ResourceLocation location = new ResourceLocation(MOD_ID, path);
-        SoundEvent sound = SoundEvent.createVariableRangeEvent(location);
-        SOUND_EVENTS.put(location, sound);
-        return sound;
-    }
+    public static final SoundEvent MUSIC_END_CREATIVE = SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, "music.end.creative"));
+    public static final SoundEvent MUSIC_END_BOSS = SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, "music.end.boss"));
 
     public static void init() {
         DeferredRegister<SoundEvent> SOUND_EVENTS_REGISTER = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
-        for (ResourceLocation location : DynamicMusic.SOUND_EVENTS.keySet()) {
-            SOUND_EVENTS_REGISTER.register(location.getPath(), () -> SOUND_EVENTS.get(location));
+
+        for (SoundEvent sound : DynamicMusicHelper.getCreativeMusic().values()) {
+            SOUND_EVENTS_REGISTER.register(sound.getLocation().getPath(), () -> sound);
         }
+        for (SoundEvent sound : DynamicMusicHelper.getSurvivalMusic().values()) {
+            SOUND_EVENTS_REGISTER.register(sound.getLocation().getPath(), () -> sound);
+        }
+
+        SOUND_EVENTS_REGISTER.register(MUSIC_END_CREATIVE.getLocation().getPath(), () -> MUSIC_END_CREATIVE);
+        SOUND_EVENTS_REGISTER.register(MUSIC_END_BOSS.getLocation().getPath(), () -> MUSIC_END_BOSS);
+
         SOUND_EVENTS_REGISTER.register();
     }
 

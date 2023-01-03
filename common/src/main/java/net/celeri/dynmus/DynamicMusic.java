@@ -16,7 +16,6 @@ import java.util.Map;
 
 public class DynamicMusic {
     public static final String MOD_ID = "dynmus";
-    public static DynamicMusicConfig config;
 
     private static final Map<ResourceLocation, SoundEvent> SOUND_EVENTS = new LinkedHashMap<>();
 
@@ -38,15 +37,13 @@ public class DynamicMusic {
     public static final SoundEvent MUSIC_END_BOSS = add("music.end.boss");
 
     private static SoundEvent add(String path) {
-        ResourceLocation location = new ResourceLocation("dynmus", path);
+        ResourceLocation location = new ResourceLocation(MOD_ID, path);
         SoundEvent sound = SoundEvent.createVariableRangeEvent(location);
         SOUND_EVENTS.put(location, sound);
         return sound;
     }
 
-    public static void init(DynamicMusicConfig config) {
-        DynamicMusic.config = config;
-
+    public static void init() {
         DeferredRegister<SoundEvent> SOUND_EVENTS_REGISTER = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
         for (ResourceLocation location : DynamicMusic.SOUND_EVENTS.keySet()) {
             SOUND_EVENTS_REGISTER.register(location.getPath(), () -> SOUND_EVENTS.get(location));
@@ -54,8 +51,8 @@ public class DynamicMusic {
         SOUND_EVENTS_REGISTER.register();
     }
 
-    public static boolean isInCave(Level level, BlockPos pos, DynamicMusicConfig config) {
-        int searchRange = config.searchRange();
+    public static boolean isInCave(Level level, BlockPos pos) {
+        int searchRange = DynamicMusicConfig.searchRange;
 
         if (searchRange >= 1 && !level.canSeeSky(pos)) {
             int darkBlocks = 0;
@@ -69,7 +66,7 @@ public class DynamicMusic {
                         if (level.isEmptyBlock(offsetPos)) {
                             airBlocks++;
                             if (level.getLightEngine().getLayerListener(LightLayer.BLOCK).getLightValue(offsetPos)
-                                    <= config.darknessCap()) {
+                                    <= DynamicMusicConfig.darknessCap) {
                                 darkBlocks++;
                             }
                         }
@@ -88,15 +85,15 @@ public class DynamicMusic {
             double stonePercentage = ((double) stoneBlocks) / (blockCount);
             double darkPercentage = ((double) darkBlocks) / ((double) airBlocks);
 
-            if (darkPercentage >= config.darknessPercent()) {
-                return stonePercentage >= config.stonePercent();
+            if (darkPercentage >= DynamicMusicConfig.darknessPercent) {
+                return stonePercentage >= DynamicMusicConfig.stonePercent;
             }
         }
         return false;
     }
 
-    public static double getAverageDarkness(Level level, BlockPos pos, DynamicMusicConfig config) {
-        int searchRange = config.searchRange();
+    public static double getAverageDarkness(Level level, BlockPos pos) {
+        int searchRange = DynamicMusicConfig.searchRange;
 
         if (searchRange >= 1) {
             int airBlocks = 0;
@@ -120,8 +117,8 @@ public class DynamicMusic {
         return 15;
     }
 
-    public static boolean isInPseudoMinecraft(Level level, BlockPos pos, DynamicMusicConfig config) {
-        int searchRange = config.pseudoMineshaftSearchRange();
+    public static boolean isInPseudoMinecraft(Level level, BlockPos pos) {
+        int searchRange = DynamicMusicConfig.pseudoMineshaftSearchRange;
 
         if (searchRange >= 1) {
 
@@ -147,7 +144,7 @@ public class DynamicMusic {
 
             double mineshaftPercentage = ((double) pseudoMineshaftBlocks) / ((double) airBlocks);
 
-            return mineshaftPercentage >= config.pseudoMineshaftPercent();
+            return mineshaftPercentage >= DynamicMusicConfig.pseudoMineshaftPercent;
 
         }
 

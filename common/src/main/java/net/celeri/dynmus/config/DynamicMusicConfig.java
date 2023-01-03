@@ -1,35 +1,37 @@
 package net.celeri.dynmus.config;
 
-abstract public class DynamicMusicConfig {
-    abstract public int searchRange();
+import eu.midnightdust.lib.config.MidnightConfig;
 
-    abstract public int darknessCap();
+public class DynamicMusicConfig extends MidnightConfig {
+    @Entry(min = 0) public static int searchRange = 5;
 
-    abstract public double darknessPercent();
+    @Entry(isSlider = true, min = 0, max = 15) public static int darknessCap = 8;
 
-    abstract public double stonePercent();
+    @Entry(min = 0f, max = 1f) public static double darknessPercent = 0.3;
 
-    abstract public int pseudoMineshaftSearchRange();
+    @Entry(min = 0f, max = 1f) public static double stonePercent = 0.15;
 
-    abstract public double pseudoMineshaftPercent();
+    @Entry(min = 0) public static int pseudoMineshaftSearchRange = 2;
 
-    abstract public boolean caveMusic();
+    @Entry(min = 0f, max = 1f) public static double pseudoMineshaftPercent = 0.1;
 
-    abstract public boolean coldMusic();
+    @Entry public static boolean caveMusic = true;
 
-    abstract public boolean hotMusic();
+    @Entry public static boolean coldMusic = true;
 
-    abstract public boolean niceMusic();
+    @Entry public static boolean hotMusic = true;
 
-    abstract public boolean downMusic();
+    @Entry public static boolean niceMusic = true;
 
-    abstract public boolean endCreativeMusic();
+    @Entry public static boolean downMusic = true;
 
-    abstract public boolean endBossMusic();
+    @Entry public static boolean endCreativeMusic = true;
 
-    abstract public boolean dynamicPitch();
+    @Entry public static boolean endBossMusic = true;
 
-    abstract public long dynamicPitchAnchor();
+    @Entry public static boolean dynamicPitch = true;
 
-    abstract public boolean dynamicPitchFaster();
+    @Entry(min = 0, max = 24000) public static int dynamicPitchAnchor = 18000;
+
+    @Entry public static boolean dynamicPitchFaster = false;
 }

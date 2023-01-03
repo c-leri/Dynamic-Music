@@ -34,8 +34,8 @@ ordering = "AFTER"
 side = "CLIENT"
 
 [[dependencies.dynmus]]
-modId = "configuration"
+modId = "midnightlib"
 mandatory = true
-versionRange = "[2.0.0,)"
+versionRange = "[1.0.0,)"
 ordering = "AFTER"
 side = "CLIENT"

@@ -19,9 +19,6 @@
   "entrypoints": {
     "client": [
       "net.celeri.dynmus.fabric.DynamicMusicFabric"
-    ],
-    "modmenu": [
-      "net.celeri.dynmus.fabric.config.DynamicMusicModMenuCompat"
     ]
   },
   "mixins": [
@@ -32,6 +29,6 @@
     "fabric": "*",
     "minecraft": ">=1.19.2",
     "architectury": ">=6.2.43",
-    "cloth-config": ">=8.0.75"
+    "midnightlib": ">=1.0.0"
   }
 }

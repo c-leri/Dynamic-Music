@@ -1,6 +1,7 @@
 package net.celeri.dynmus.mixin;
 
 import net.celeri.dynmus.DynamicMusic;
+import net.celeri.dynmus.config.DynamicMusicConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
@@ -28,37 +29,37 @@ public class MinecraftClientMixin {
     private void dynmus$getSituationalMusic(CallbackInfoReturnable<Music> ci) {
         if (ci.getReturnValue() == Musics.GAME && this.level.dimension() == Level.OVERWORLD) {
             if (this.level != null) {
-                if (DynamicMusic.isInCave(level, player.blockPosition(), DynamicMusic.config) && DynamicMusic.config.caveMusic()) {
+                if (DynamicMusic.isInCave(level, player.blockPosition()) && DynamicMusicConfig.caveMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_CAVE));
-                } else if (((level.getDayTime() >= 13000 && level.getDayTime() < 23000) || level.isRaining()) && DynamicMusic.config.downMusic()) {
+                } else if (((level.getDayTime() >= 13000 && level.getDayTime() < 23000) || level.isRaining()) && DynamicMusicConfig.downMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_DOWN));
-                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() <= 0.05F && DynamicMusic.config.coldMusic()) {
+                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() <= 0.05F && DynamicMusicConfig.coldMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_COLD));
-                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() >= 2.0F && DynamicMusic.config.hotMusic()) {
+                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() >= 2.0F && DynamicMusicConfig.hotMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_HOT));
-                } else if (DynamicMusic.config.niceMusic()) {
+                } else if (DynamicMusicConfig.niceMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_NICE));
                 }
             }
         } else if (ci.getReturnValue() == Musics.CREATIVE && this.level.dimension() == Level.OVERWORLD) {
             if (this.level != null) {
-                if (DynamicMusic.isInCave(level, player.blockPosition(), DynamicMusic.config) && DynamicMusic.config.caveMusic()) {
+                if (DynamicMusic.isInCave(level, player.blockPosition()) && DynamicMusicConfig.caveMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_CAVE_CREATIVE));
-                } else if (((level.getDayTime() >= 13000 && level.getDayTime() < 23000) || level.isRaining()) && DynamicMusic.config.downMusic()) {
+                } else if (((level.getDayTime() >= 13000 && level.getDayTime() < 23000) || level.isRaining()) && DynamicMusicConfig.downMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_DOWN_CREATIVE));
-                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() < 0.15F && DynamicMusic.config.coldMusic()) {
+                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() < 0.15F && DynamicMusicConfig.coldMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_COLD_CREATIVE));
-                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() > 0.95F && DynamicMusic.config.hotMusic()) {
+                } else if (level.getBiomeManager().getBiome(this.player.blockPosition()).value().getBaseTemperature() > 0.95F && DynamicMusicConfig.hotMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_HOT_CREATIVE));
-                } else if (DynamicMusic.config.niceMusic()) {
+                } else if (DynamicMusicConfig.niceMusic) {
                     ci.setReturnValue(Musics.createGameMusic(DynamicMusic.MUSIC_NICE_CREATIVE));
                 }
             }
-        } else if (ci.getReturnValue() == Musics.END_BOSS && DynamicMusic.config.endBossMusic()) {
+        } else if (ci.getReturnValue() == Musics.END_BOSS && DynamicMusicConfig.endBossMusic) {
             ci.setReturnValue(new Music(DynamicMusic.MUSIC_END_BOSS, 0, 0, true));
         } else if (ci.getReturnValue() == Musics.END
                 && this.player.getAbilities().instabuild && this.player.getAbilities().flying
-                && DynamicMusic.config.endCreativeMusic()) {
+                && DynamicMusicConfig.endCreativeMusic) {
             ci.setReturnValue(new Music(DynamicMusic.MUSIC_END_CREATIVE, 1200, 8000, true));
         }
     }

@@ -34,8 +34,8 @@ ordering = "AFTER"
 side = "CLIENT"
 
 [[dependencies.dynmus]]
-modId = "midnightlib"
+modId = "cloth_config"
 mandatory = true
-versionRange = "[1.1.0,)"
+versionRange = "[9.0.94,)"
 ordering = "AFTER"
 side = "CLIENT"

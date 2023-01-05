@@ -2,7 +2,7 @@ package net.celeri.dynmus;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.celeri.dynmus.config.DynamicMusicConfig;
 import net.celeri.dynmus.util.DynamicMusicHelper;
 import net.minecraft.core.BlockPos;
@@ -23,7 +23,7 @@ public class DynamicMusic {
     public static final SoundEvent MUSIC_END_BOSS = new SoundEvent(new ResourceLocation(MOD_ID, "music.end.boss"));
 
     public static void init() {
-        AutoConfig.register(DynamicMusicConfig.class, Toml4jConfigSerializer::new);
+        AutoConfig.register(DynamicMusicConfig.class, JanksonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
 
         DeferredRegister<SoundEvent> SOUND_EVENTS_REGISTER = DeferredRegister.create(MOD_ID, Registry.SOUND_EVENT_REGISTRY);

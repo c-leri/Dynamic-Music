@@ -1,5 +1,6 @@
 package net.celeri.dynmus.util;
 
+import net.celeri.dynmus.config.MusicSelector.MusicToggle;
 import net.celeri.dynmus.DynamicMusic;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -9,20 +10,6 @@ import java.util.*;
 public class DynamicMusicHelper {
     public enum MusicType {
         Cave, Cold, Hot, Nice, Down
-    }
-
-    public enum MusicToggle {
-        Survival, Creative, Both, None;
-
-        @Override
-        public String toString() {
-            return switch (this) {
-                case Survival -> "§eSurvival";
-                case Creative -> "§bCreative";
-                case Both -> "§aBoth";
-                case None -> "§cNone";
-            };
-        }
     }
 
     private static final Random random = new Random();

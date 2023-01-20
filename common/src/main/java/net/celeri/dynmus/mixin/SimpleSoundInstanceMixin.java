@@ -34,7 +34,7 @@ public class SimpleSoundInstanceMixin {
                     double maxPitch = Mth.lerp(random.nextDouble(), minPitch / 3, random.nextDouble() * -1);
                     double note = Mth.lerp(random.nextDouble(), DynamicMusic.config.generalConfig.dynamicPitch.faster ? -minPitch : minPitch, DynamicMusic.config.generalConfig.dynamicPitch.faster ? -maxPitch : maxPitch);
                     double newPitch = Math.pow(2.0D, note / 12.0D);
-                    ci.setReturnValue(new SimpleSoundInstance(music.getLocation(), SoundSource.MUSIC, 1.0F, (float) newPitch, SoundInstance.createUnseededRandom(), false, 0, SoundInstance.Attenuation.NONE, 0.0D, 0.0D, 0.0D, true));
+                    ci.setReturnValue(new SimpleSoundInstance(music.getLocation(), SoundSource.MUSIC, 1.0F, (float) newPitch, false, 0, SoundInstance.Attenuation.NONE, 0.0D, 0.0D, 0.0D, true));
                 }
             }
         }

@@ -28,10 +28,6 @@ public class MusicSelector implements ConfigData {
             MusicToggle.Both, MusicToggle.None, MusicToggle.None,
             MusicToggle.Both, MusicToggle.None, MusicToggle.None,
             MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.Both, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
             MusicToggle.Both, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -48,10 +44,6 @@ public class MusicSelector implements ConfigData {
             MusicToggle.None, MusicToggle.None, MusicToggle.Both,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -65,10 +57,6 @@ public class MusicSelector implements ConfigData {
             MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.Both,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -85,10 +73,6 @@ public class MusicSelector implements ConfigData {
             MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -104,10 +88,6 @@ public class MusicSelector implements ConfigData {
             MusicToggle.Both, MusicToggle.None, MusicToggle.None,
             MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
             MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
             MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -153,30 +133,6 @@ public class MusicSelector implements ConfigData {
         public MusicToggle piano2;
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public MusicToggle piano3;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle aerie;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle ancestry;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle an_ordinary_day;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle comforting_memories;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle firebugs;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle floating_dream;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle infinite_amethyst;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle labyrinthine;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle left_to_bloom;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle one_more_day;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle stand_tall;
-        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-        public MusicToggle wending;
 
         // Records
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
@@ -216,10 +172,6 @@ public class MusicSelector implements ConfigData {
                 MusicToggle hal1, MusicToggle hal2, MusicToggle hal3, MusicToggle hal4,
                 MusicToggle nuance1, MusicToggle nuance2,
                 MusicToggle piano1, MusicToggle piano2, MusicToggle piano3,
-                MusicToggle aerie, MusicToggle ancestry, MusicToggle an_ordinary_day,
-                MusicToggle comforting_memories, MusicToggle firebugs, MusicToggle floating_dream,
-                MusicToggle infinite_amethyst, MusicToggle labyrinthine, MusicToggle left_to_bloom,
-                MusicToggle one_more_day, MusicToggle stand_tall, MusicToggle wending,
                 MusicToggle thirteen, MusicToggle cat, MusicToggle blocks, MusicToggle chirp, MusicToggle far, MusicToggle mall,
                 MusicToggle mellohi, MusicToggle stal, MusicToggle strad, MusicToggle ward, MusicToggle eleven, MusicToggle wait,
                 MusicToggle otherside, MusicToggle five, MusicToggle pigstep
@@ -242,18 +194,6 @@ public class MusicSelector implements ConfigData {
             this.piano1 = piano1;
             this.piano2 = piano2;
             this.piano3 = piano3;
-            this.aerie = aerie;
-            this.ancestry = ancestry;
-            this.an_ordinary_day = an_ordinary_day;
-            this.comforting_memories = comforting_memories;
-            this.firebugs = firebugs;
-            this.floating_dream = floating_dream;
-            this.infinite_amethyst = infinite_amethyst;
-            this.labyrinthine = labyrinthine;
-            this.left_to_bloom = left_to_bloom;
-            this.one_more_day = one_more_day;
-            this.stand_tall = stand_tall;
-            this.wending = wending;
             this.thirteen = thirteen;
             this.cat = cat;
             this.blocks = blocks;

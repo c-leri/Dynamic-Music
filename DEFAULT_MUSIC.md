@@ -18,14 +18,10 @@
 | Dry Hands           | minecraft:music/game/piano1              | survival/creative |                   |                   |                   | survival/creative |
 | Wet Hands           | minecraft:music/game/piano2              |                   |                   |                   | survival/creative |                   |
 | Mice on Venus       | minecraft:music/game/piano3              |                   |                   |                   |                   | survival/creative |
-| Aerie               | minecraft:music/game/swamp/aerie         | survival/creative |                   | survival/creative |                   |                   |
-| Ancestry            | minecraft:music/game/ancestry            | survival/creative |                   |                   |                   |                   |
 | An Ordinary Day     | minecraft:music/game/an_ordinary_day     | survival/creative |                   |                   | survival/creative |                   |
 | Comforting Memories | minecraft:music/game/comforting_memories |                   | survival/creative |                   |                   | survival/creative |
-| Firebugs            | minecraft:music/game/swamp/firebugs      |                   |                   | survival/creative |                   | survival/creative |
 | Floating Dream      | minecraft:music/game/floating_dream      |                   |                   | survival/creative |                   |                   |
 | Infinite Amethyst   | minecraft:music/game/infinite_amethyst   | survival/creative |                   |                   |                   |                   |
-| Labyrinthine        | minecraft:music/game/swamp/labyrinthine  |                   |                   | survival/creative | survival/creative |                   |
 | Left to Bloom       | minecraft:music/game/left_to_bloom       |                   |                   |                   |                   | survival/creative |
 | One More Day        | minecraft:music/game/one_more_day        | survival/creative |                   |                   |                   |                   |
 | Stand Tall          | minecraft:music/game/stand_tall          |                   | survival/creative |                   | survival/creative |                   |

@@ -143,22 +143,6 @@
 			}
 		]
 	},
-	"music.aerie":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/swamp/aerie",
-				"stream": true
-			}
-		]
-	},
-	"music.ancestry":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/ancestry",
-				"stream": true
-			}
-		]
-	},
 	"music.an_ordinary_day":{
 		"sounds": [
 			{
@@ -175,14 +159,6 @@
 			}
 		]
 	},
-	"music.firebugs":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/swamp/firebugs",
-				"stream": true
-			}
-		]
-	},
 	"music.floating_dream":{
 		"sounds": [
 			{
@@ -195,14 +171,6 @@
 		"sounds": [
 			{
 				"name": "minecraft:music/game/infinite_amethyst",
-				"stream": true
-			}
-		]
-	},
-	"music.labyrinthine":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/swamp/labyrinthine",
 				"stream": true
 			}
 		]

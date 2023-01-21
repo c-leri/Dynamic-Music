@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[43,)"
+loaderVersion = "[40,)"
 issueTrackerURL = "https://github.com/celestomm/Dynamic-Music/issues"
 license = "LGPLv3"
 
@@ -15,27 +15,27 @@ displayTest = "IGNORE_ALL_VERSION"
 [[dependencies.dynmus]]
 modId = "forge"
 mandatory = true
-versionRange = "[43,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "CLIENT"
 
 [[dependencies.dynmus]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.2,)"
+versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.dynmus]]
 modId = "architectury"
 mandatory = true
-versionRange = "[6.2.43,)"
+versionRange = "[4.10.88,)"
 ordering = "AFTER"
 side = "CLIENT"
 
 [[dependencies.dynmus]]
 modId = "cloth_config"
 mandatory = true
-versionRange = "[8.2.88,)"
+versionRange = "[6.3.81,)"
 ordering = "AFTER"
 side = "CLIENT"

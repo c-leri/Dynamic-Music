@@ -21,7 +21,7 @@
       "net.celeri.dynmus.fabric.DynamicMusicFabric"
     ],
     "modmenu": [
-      "net.celeri.dynmus.fabric.config.DynamicMusicModMenuCompat"
+      "net.celeri.dynmus.fabric.config.ModMenuCompat"
     ]
   },
   "mixins": [

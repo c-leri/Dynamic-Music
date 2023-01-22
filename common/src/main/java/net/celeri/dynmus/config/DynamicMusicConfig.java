@@ -1,35 +1,18 @@
 package net.celeri.dynmus.config;
 
-abstract public class DynamicMusicConfig {
-    abstract public int searchRange();
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
+import net.celeri.dynmus.DynamicMusic;
 
-    abstract public int darknessCap();
+@Config(name = DynamicMusic.MOD_ID)
+@Config.Gui.Background(value = "minecraft:textures/block/stone.png")
+public class DynamicMusicConfig extends PartitioningSerializer.GlobalData {
+    @ConfigEntry.Category("generalConfig")
+    @ConfigEntry.Gui.TransitiveObject
+    public GeneralConfig generalConfig = new GeneralConfig();
 
-    abstract public double darknessPercent();
-
-    abstract public double stonePercent();
-
-    abstract public int pseudoMineshaftSearchRange();
-
-    abstract public double pseudoMineshaftPercent();
-
-    abstract public boolean caveMusic();
-
-    abstract public boolean coldMusic();
-
-    abstract public boolean hotMusic();
-
-    abstract public boolean niceMusic();
-
-    abstract public boolean downMusic();
-
-    abstract public boolean endCreativeMusic();
-
-    abstract public boolean endBossMusic();
-
-    abstract public boolean dynamicPitch();
-
-    abstract public long dynamicPitchAnchor();
-
-    abstract public boolean dynamicPitchFaster();
+    @ConfigEntry.Category("musicSelector")
+    @ConfigEntry.Gui.TransitiveObject
+    public MusicSelector musicSelector = new MusicSelector();
 }

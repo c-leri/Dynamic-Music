@@ -1,7 +1,11 @@
 package net.celeri.dynmus;
 
 import dev.architectury.registry.registries.DeferredRegister;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.celeri.dynmus.config.DynamicMusicConfig;
+import net.celeri.dynmus.util.DynamicMusicHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -11,53 +15,34 @@ import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Material;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class DynamicMusic {
     public static final String MOD_ID = "dynmus";
+
     public static DynamicMusicConfig config;
 
-    private static final Map<ResourceLocation, SoundEvent> SOUND_EVENTS = new LinkedHashMap<>();
+    public static final SoundEvent MUSIC_END_CREATIVE = SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, "music.end.creative"));
+    public static final SoundEvent MUSIC_END_BOSS = SoundEvent.createVariableRangeEvent(new ResourceLocation(MOD_ID, "music.end.boss"));
 
-    public static final SoundEvent MUSIC_COLD = add("music.cold");
-    public static final SoundEvent MUSIC_HOT = add("music.hot");
-    public static final SoundEvent MUSIC_CAVE = add("music.cave");
-
-    public static final SoundEvent MUSIC_NICE = add("music.nice");
-    public static final SoundEvent MUSIC_DOWN = add("music.down");
-
-    public static final SoundEvent MUSIC_COLD_CREATIVE = add("music.cold.creative");
-    public static final SoundEvent MUSIC_HOT_CREATIVE = add("music.hot.creative");
-    public static final SoundEvent MUSIC_CAVE_CREATIVE = add("music.cave.creative");
-
-    public static final SoundEvent MUSIC_NICE_CREATIVE = add("music.nice.creative");
-    public static final SoundEvent MUSIC_DOWN_CREATIVE = add("music.down.creative");
-
-    public static final SoundEvent MUSIC_END_CREATIVE = add("music.end.creative");
-    public static final SoundEvent MUSIC_END_BOSS = add("music.end.boss");
-
-    private static SoundEvent add(String path) {
-        ResourceLocation location = new ResourceLocation("dynmus", path);
-        SoundEvent sound = SoundEvent.createVariableRangeEvent(location);
-        SOUND_EVENTS.put(location, sound);
-        return sound;
-    }
-
-    public static void init(DynamicMusicConfig config) {
-        DynamicMusic.config = config;
+    public static void init() {
+        AutoConfig.register(DynamicMusicConfig.class, PartitioningSerializer.wrap(GsonConfigSerializer::new));
+        config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
 
         DeferredRegister<SoundEvent> SOUND_EVENTS_REGISTER = DeferredRegister.create(MOD_ID, Registries.SOUND_EVENT);
-        for (ResourceLocation location : DynamicMusic.SOUND_EVENTS.keySet()) {
-            SOUND_EVENTS_REGISTER.register(location.getPath(), () -> SOUND_EVENTS.get(location));
+
+        for (SoundEvent sound : DynamicMusicHelper.getMusics().values()) {
+            SOUND_EVENTS_REGISTER.register(sound.getLocation().getPath(), () -> sound);
         }
+
+        SOUND_EVENTS_REGISTER.register(MUSIC_END_CREATIVE.getLocation().getPath(), () -> MUSIC_END_CREATIVE);
+        SOUND_EVENTS_REGISTER.register(MUSIC_END_BOSS.getLocation().getPath(), () -> MUSIC_END_BOSS);
+
         SOUND_EVENTS_REGISTER.register();
     }
 
-    public static boolean isInCave(Level level, BlockPos pos, DynamicMusicConfig config) {
-        int searchRange = config.searchRange();
+    public static boolean isInCave(Level level, BlockPos pos) {
+        int searchRange = config.generalConfig.caveDetection.searchRange;
 
-        if (searchRange >= 1 && !level.canSeeSky(pos)) {
+        if (searchRange >= 1 && !level.canSeeSky(pos) && config.generalConfig.caveDetection.darknessPercent < 1 || config.generalConfig.caveDetection.stonePercent < 1) {
             int darkBlocks = 0;
             int stoneBlocks = 0;
             int airBlocks = 0;
@@ -69,7 +54,7 @@ public class DynamicMusic {
                         if (level.isEmptyBlock(offsetPos)) {
                             airBlocks++;
                             if (level.getLightEngine().getLayerListener(LightLayer.BLOCK).getLightValue(offsetPos)
-                                    <= config.darknessCap()) {
+                                    <= config.generalConfig.caveDetection.darknessCap) {
                                 darkBlocks++;
                             }
                         }
@@ -88,15 +73,13 @@ public class DynamicMusic {
             double stonePercentage = ((double) stoneBlocks) / (blockCount);
             double darkPercentage = ((double) darkBlocks) / ((double) airBlocks);
 
-            if (darkPercentage >= config.darknessPercent()) {
-                return stonePercentage >= config.stonePercent();
-            }
+            return darkPercentage >= config.generalConfig.caveDetection.darknessPercent && stonePercentage >= config.generalConfig.caveDetection.stonePercent;
         }
         return false;
     }
 
-    public static double getAverageDarkness(Level level, BlockPos pos, DynamicMusicConfig config) {
-        int searchRange = config.searchRange();
+    public static double getAverageDarkness(Level level, BlockPos pos) {
+        int searchRange = config.generalConfig.caveDetection.searchRange;
 
         if (searchRange >= 1) {
             int airBlocks = 0;
@@ -115,15 +98,14 @@ public class DynamicMusic {
             }
 
             return (((double) lightTogether) / ((double) airBlocks));
-
         }
         return 15;
     }
 
-    public static boolean isInPseudoMinecraft(Level level, BlockPos pos, DynamicMusicConfig config) {
-        int searchRange = config.pseudoMineshaftSearchRange();
+    public static boolean isInPseudoMinecraft(Level level, BlockPos pos) {
+        int searchRange = config.generalConfig.mineshaftDetection.searchRange;
 
-        if (searchRange >= 1) {
+        if (searchRange >= 1 && config.generalConfig.mineshaftDetection.percent < 1) {
 
             int pseudoMineshaftBlocks = 0;
             int airBlocks = 0;
@@ -147,8 +129,7 @@ public class DynamicMusic {
 
             double mineshaftPercentage = ((double) pseudoMineshaftBlocks) / ((double) airBlocks);
 
-            return mineshaftPercentage >= config.pseudoMineshaftPercent();
-
+            return mineshaftPercentage >= config.generalConfig.mineshaftDetection.percent;
         }
 
         return false;

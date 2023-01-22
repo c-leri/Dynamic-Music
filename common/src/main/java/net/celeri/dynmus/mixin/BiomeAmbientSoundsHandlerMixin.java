@@ -33,9 +33,9 @@ public class BiomeAmbientSoundsHandlerMixin {
     private void dynmus$tick(CallbackInfo ci) {
         this.moodSettings.ifPresent((ambientMoodSettings -> {
             Level level = this.player.level;
-            if (DynamicMusic.isInCave(level, player.blockPosition(), DynamicMusic.config)
-                    && DynamicMusic.isInPseudoMinecraft(level, player.blockPosition(), DynamicMusic.config)) {
-                this.moodiness += (float) ((15 - DynamicMusic.getAverageDarkness(level, player.blockPosition(), DynamicMusic.config)) / (float) ambientMoodSettings.getTickDelay());
+            if (DynamicMusic.isInCave(level, player.blockPosition())
+                    && DynamicMusic.isInPseudoMinecraft(level, player.blockPosition())) {
+                this.moodiness += (float) ((15 - DynamicMusic.getAverageDarkness(level, player.blockPosition())) / (float) ambientMoodSettings.getTickDelay());
             }
         }));
     }

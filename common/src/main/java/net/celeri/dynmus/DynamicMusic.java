@@ -18,14 +18,10 @@ import net.minecraft.world.level.material.Material;
 public class DynamicMusic {
     public static final String MOD_ID = "dynmus";
 
-    public static DynamicMusicConfig config;
-
-    public static final SoundEvent MUSIC_END_CREATIVE = new SoundEvent(new ResourceLocation(MOD_ID, "music.end.creative"));
     public static final SoundEvent MUSIC_END_BOSS = new SoundEvent(new ResourceLocation(MOD_ID, "music.end.boss"));
 
     public static void init() {
         AutoConfig.register(DynamicMusicConfig.class, PartitioningSerializer.wrap(GsonConfigSerializer::new));
-        config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
 
         DeferredRegister<SoundEvent> SOUND_EVENTS_REGISTER = DeferredRegister.create(MOD_ID, Registry.SOUND_EVENT_REGISTRY);
 
@@ -33,16 +29,22 @@ public class DynamicMusic {
             SOUND_EVENTS_REGISTER.register(sound.getLocation().getPath(), () -> sound);
         }
 
-        SOUND_EVENTS_REGISTER.register(MUSIC_END_CREATIVE.getLocation().getPath(), () -> MUSIC_END_CREATIVE);
         SOUND_EVENTS_REGISTER.register(MUSIC_END_BOSS.getLocation().getPath(), () -> MUSIC_END_BOSS);
 
         SOUND_EVENTS_REGISTER.register();
     }
 
     public static boolean isInCave(Level level, BlockPos pos) {
+        DynamicMusicConfig config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
+
         int searchRange = config.generalConfig.caveDetection.searchRange;
 
-        if (searchRange >= 1 && !level.canSeeSky(pos) && config.generalConfig.caveDetection.darknessPercent < 1 || config.generalConfig.caveDetection.stonePercent < 1) {
+        if (
+            searchRange >= 1
+                // Block above position
+                && !level.canSeeSky(pos)
+                && (config.generalConfig.caveDetection.darknessPercent < 1 || config.generalConfig.caveDetection.stonePercent < 1)
+        ) {
             int darkBlocks = 0;
             int stoneBlocks = 0;
             int airBlocks = 0;
@@ -54,14 +56,16 @@ public class DynamicMusic {
                         if (level.isEmptyBlock(offsetPos)) {
                             airBlocks++;
                             if (level.getLightEngine().getLayerListener(LightLayer.BLOCK).getLightValue(offsetPos)
-                                    <= config.generalConfig.caveDetection.darknessCap) {
+                                <= config.generalConfig.caveDetection.darknessCap) {
                                 darkBlocks++;
                             }
                         }
                         if (level.getBlockState(offsetPos).getMaterial() == Material.LAVA) {
                             darkBlocks++;
-                        }
-                        if (level.getBlockState(offsetPos).getMaterial() == Material.STONE) {
+                        } else if (
+                            level.getBlockState(offsetPos).getMaterial() == Material.STONE
+                                || level.getBlockState(offsetPos).getMaterial() == Material.SCULK
+                        ) {
                             stoneBlocks++;
                         }
                     }
@@ -79,6 +83,8 @@ public class DynamicMusic {
     }
 
     public static double getAverageDarkness(Level level, BlockPos pos) {
+        DynamicMusicConfig config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
+
         int searchRange = config.generalConfig.caveDetection.searchRange;
 
         if (searchRange >= 1) {
@@ -104,6 +110,8 @@ public class DynamicMusic {
     }
 
     public static boolean isInPseudoMinecraft(Level level, BlockPos pos) {
+        DynamicMusicConfig config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
+        
         int searchRange = config.generalConfig.mineshaftDetection.searchRange;
 
         if (searchRange >= 1 && config.generalConfig.mineshaftDetection.percent < 1) {

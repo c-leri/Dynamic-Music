@@ -1,0 +1,89 @@
+name: Publish on CurseForge & Modrinth
+
+on:
+  release:
+    types: [ published ]
+
+env:
+  MINECRAFT_VERSION: 1.18.2
+  JAVA_VERSION: 17
+  VERSION: ${{ github.event.release.tag_name }}
+  RELEASE_NAME: ${{ github.event.release.name }}
+  MODRINTH_TOKEN: ${{ secrets.PUBLISH_MODRINTH_TOKEN }}
+  CURSEFORGE_TOKEN: ${{ secrets.PUBLISH_CURSEFORGE_TOKEN }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get files
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: c-leri/Dynamic-Music
+          version: "tags/${{ env.VERSION }}"
+          regex: true
+          file: "dynmus-.+-(fabric|forge)\\.jar"
+
+      - name: Rename files
+        run: |
+          mv dynmus-*-fabric.jar dynmus-${{ env.VERSION }}-fabric.jar
+          mv dynmus-*-forge.jar dynmus-${{ env.VERSION }}-forge.jar
+
+      - name: Publish Fabric (CurseForge/Modrinth)
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          curseforge-id: 690182
+          curseforge-token: "${{env.CURSEFORGE_TOKEN}}"
+
+          modrinth-id: ilfn0HT9
+          modrinth-token: "${{env.MODRINTH_TOKEN}}"
+          modrinth-featured: true
+
+          name: "[Fabric] ${{env.RELEASE_NAME}}"
+          version: "${{env.VERSION}}"
+          version-type: release
+          changelog: ${{ github.event.release.body }}
+
+          files: dynmus-*-fabric.jar
+
+          dependencies: |
+            fabric(required){modrinth:P7dR8mSH}{curseforge:306612}
+            architectury(required){modrinth:lhGA9TYQ}{curseforge:419699}
+            cloth-config(required){modrinth:9s6osm5g}{curseforge:348521}
+
+          loaders: fabric
+          game-versions: "${{env.MINECRAFT_VERSION}}"
+          java: "${{env.JAVA_VERSION}}"
+
+          retry-attempts: 2
+          retry-delay: 10000
+          fail-mode: fail
+
+      - name: Publish Forge (CurseForge/Modrinth)
+        uses: Kir-Antipov/mc-publish@v3.2
+        with:
+          curseforge-id: 690182
+          curseforge-token: "${{env.CURSEFORGE_TOKEN}}"
+
+          modrinth-id: ilfn0HT9
+          modrinth-token: "${{env.MODRINTH_TOKEN}}"
+          modrinth-featured: true
+
+          name: "[Forge] ${{env.RELEASE_NAME}}"
+          version: "${{env.VERSION}}"
+          version-type: release
+          changelog: ${{ github.event.release.body }}
+
+          files: dynmus-*-forge.jar
+
+          dependencies: |
+            architectury(required){modrinth:lhGA9TYQ}{curseforge:419699}
+            cloth-config(required){modrinth:9s6osm5g}{curseforge:348521}
+
+          loaders: forge
+          game-versions: "${{env.MINECRAFT_VERSION}}"
+          java: "${{env.JAVA_VERSION}}"
+
+          retry-attempts: 2
+          retry-delay: 10000
+          fail-mode: fail

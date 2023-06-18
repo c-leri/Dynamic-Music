@@ -40,7 +40,7 @@ public class GeneralConfig implements ConfigData {
         public boolean downMusic = true;
 
         @ConfigEntry.Gui.Tooltip()
-        public boolean endCreativeMusic = true;
+        public boolean endMusic = true;
 
         @ConfigEntry.Gui.Tooltip()
         public boolean endBossMusic = true;

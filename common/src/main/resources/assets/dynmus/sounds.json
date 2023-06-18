@@ -1,5 +1,5 @@
 {
-	"music.calm1":{
+	"music.calm1": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/calm1",
@@ -7,7 +7,7 @@
 			}
 		]
 	},
-	"music.calm2":{
+	"music.calm2": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/calm2",
@@ -15,7 +15,7 @@
 			}
 		]
 	},
-	"music.calm3":{
+	"music.calm3": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/calm3",
@@ -23,7 +23,7 @@
 			}
 		]
 	},
-	"music.creative1":{
+	"music.creative1": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/creative/creative1",
@@ -31,7 +31,7 @@
 			}
 		]
 	},
-	"music.creative2":{
+	"music.creative2": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/creative/creative2",
@@ -39,7 +39,7 @@
 			}
 		]
 	},
-	"music.creative3":{
+	"music.creative3": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/creative/creative3",
@@ -47,7 +47,7 @@
 			}
 		]
 	},
-	"music.creative4":{
+	"music.creative4": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/creative/creative4",
@@ -55,7 +55,7 @@
 			}
 		]
 	},
-	"music.creative5":{
+	"music.creative5": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/creative/creative5",
@@ -63,7 +63,7 @@
 			}
 		]
 	},
-	"music.creative6":{
+	"music.creative6": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/creative/creative6",
@@ -71,7 +71,7 @@
 			}
 		]
 	},
-	"music.hal1":{
+	"music.hal1": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/hal1",
@@ -79,7 +79,7 @@
 			}
 		]
 	},
-	"music.hal2":{
+	"music.hal2": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/hal2",
@@ -87,7 +87,7 @@
 			}
 		]
 	},
-	"music.hal3":{
+	"music.hal3": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/hal3",
@@ -95,7 +95,7 @@
 			}
 		]
 	},
-	"music.hal4":{
+	"music.hal4": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/hal4",
@@ -103,7 +103,7 @@
 			}
 		]
 	},
-	"music.nuance1":{
+	"music.nuance1": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/nuance1",
@@ -111,7 +111,7 @@
 			}
 		]
 	},
-	"music.nuance2":{
+	"music.nuance2": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/nuance2",
@@ -119,7 +119,7 @@
 			}
 		]
 	},
-	"music.piano1":{
+	"music.piano1": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/piano1",
@@ -127,7 +127,7 @@
 			}
 		]
 	},
-	"music.piano2":{
+	"music.piano2": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/piano2",
@@ -135,7 +135,7 @@
 			}
 		]
 	},
-	"music.piano3":{
+	"music.piano3": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/piano3",
@@ -143,7 +143,7 @@
 			}
 		]
 	},
-	"music.aerie":{
+	"music.aerie": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/swamp/aerie",
@@ -151,7 +151,7 @@
 			}
 		]
 	},
-	"music.ancestry":{
+	"music.ancestry": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/ancestry",
@@ -159,7 +159,7 @@
 			}
 		]
 	},
-	"music.an_ordinary_day":{
+	"music.an_ordinary_day": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/an_ordinary_day",
@@ -167,7 +167,7 @@
 			}
 		]
 	},
-	"music.comforting_memories":{
+	"music.comforting_memories": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/comforting_memories",
@@ -175,7 +175,7 @@
 			}
 		]
 	},
-	"music.firebugs":{
+	"music.firebugs": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/swamp/firebugs",
@@ -183,7 +183,7 @@
 			}
 		]
 	},
-	"music.floating_dream":{
+	"music.floating_dream": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/floating_dream",
@@ -191,7 +191,7 @@
 			}
 		]
 	},
-	"music.infinite_amethyst":{
+	"music.infinite_amethyst": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/infinite_amethyst",
@@ -199,7 +199,7 @@
 			}
 		]
 	},
-	"music.labyrinthine":{
+	"music.labyrinthine": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/swamp/labyrinthine",
@@ -207,7 +207,7 @@
 			}
 		]
 	},
-	"music.left_to_bloom":{
+	"music.left_to_bloom": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/left_to_bloom",
@@ -215,7 +215,7 @@
 			}
 		]
 	},
-	"music.one_more_day":{
+	"music.one_more_day": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/one_more_day",
@@ -223,7 +223,7 @@
 			}
 		]
 	},
-	"music.stand_tall":{
+	"music.stand_tall": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/stand_tall",
@@ -231,7 +231,7 @@
 			}
 		]
 	},
-	"music.wending":{
+	"music.wending": {
 		"sounds": [
 			{
 				"name": "minecraft:music/game/wending",
@@ -239,24 +239,40 @@
 			}
 		]
 	},
-	"music.end.creative": {
+	"music.end.end": {
 		"sounds": [
 			{
-				"name": "minecraft:music.end",
-				"type": "event"
-			},
+				"name": "minecraft:music/game/end/end",
+				"stream": true
+			}
+		]
+	},
+	"music.end.creative1": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative1",
 				"stream": true
-			},
+			}
+		]
+	},
+	"music.end.creative2": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative2",
 				"stream": true
-			},
+			}
+		]
+	},
+	"music.end.creative3": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative3",
 				"stream": true
-			},
+			}
+		]
+	},
+	"music.end.creative4": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative4",
 				"stream": true
@@ -266,8 +282,8 @@
 	"music.end.boss": {
 		"sounds": [
 			{
-				"name": "minecraft:music.dragon",
-				"type": "event"
+				"name": "minecraft:music/game/end/boss",
+				"stream": true
 			},
 			{
 				"name": "dynmus:music/end/boss/boss1",

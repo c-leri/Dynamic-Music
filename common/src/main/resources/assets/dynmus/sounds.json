@@ -1,286 +1,302 @@
 {
-	"music.calm1":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/calm1",
-				"stream": true
-			}
-		]
-	},
-	"music.calm2":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/calm2",
-				"stream": true
-			}
-		]
-	},
-	"music.calm3":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/calm3",
-				"stream": true
-			}
-		]
-	},
-	"music.creative1":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/creative/creative1",
-				"stream": true
-			}
-		]
-	},
-	"music.creative2":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/creative/creative2",
-				"stream": true
-			}
-		]
-	},
-	"music.creative3":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/creative/creative3",
-				"stream": true
-			}
-		]
-	},
-	"music.creative4":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/creative/creative4",
-				"stream": true
-			}
-		]
-	},
-	"music.creative5":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/creative/creative5",
-				"stream": true
-			}
-		]
-	},
-	"music.creative6":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/creative/creative6",
-				"stream": true
-			}
-		]
-	},
-	"music.hal1":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/hal1",
-				"stream": true
-			}
-		]
-	},
-	"music.hal2":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/hal2",
-				"stream": true
-			}
-		]
-	},
-	"music.hal3":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/hal3",
-				"stream": true
-			}
-		]
-	},
-	"music.hal4":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/hal4",
-				"stream": true
-			}
-		]
-	},
-	"music.nuance1":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/nuance1",
-				"stream": true
-			}
-		]
-	},
-	"music.nuance2":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/nuance2",
-				"stream": true
-			}
-		]
-	},
-	"music.piano1":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/piano1",
-				"stream": true
-			}
-		]
-	},
-	"music.piano2":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/piano2",
-				"stream": true
-			}
-		]
-	},
-	"music.piano3":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/piano3",
-				"stream": true
-			}
-		]
-	},
-	"music.aerie":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/swamp/aerie",
-				"stream": true
-			}
-		]
-	},
-	"music.ancestry":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/ancestry",
-				"stream": true
-			}
-		]
-	},
-	"music.an_ordinary_day":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/an_ordinary_day",
-				"stream": true
-			}
-		]
-	},
-	"music.comforting_memories":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/comforting_memories",
-				"stream": true
-			}
-		]
-	},
-	"music.firebugs":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/swamp/firebugs",
-				"stream": true
-			}
-		]
-	},
-	"music.floating_dream":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/floating_dream",
-				"stream": true
-			}
-		]
-	},
-	"music.infinite_amethyst":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/infinite_amethyst",
-				"stream": true
-			}
-		]
-	},
-	"music.labyrinthine":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/swamp/labyrinthine",
-				"stream": true
-			}
-		]
-	},
-	"music.left_to_bloom":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/left_to_bloom",
-				"stream": true
-			}
-		]
-	},
-	"music.one_more_day":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/one_more_day",
-				"stream": true
-			}
-		]
-	},
-	"music.stand_tall":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/stand_tall",
-				"stream": true
-			}
-		]
-	},
-	"music.wending":{
-		"sounds": [
-			{
-				"name": "minecraft:music/game/wending",
-				"stream": true
-			}
-		]
-	},
-	"music.end.creative": {
-		"sounds": [
-			{
-				"name": "minecraft:music.end",
-				"type": "event"
-			},
-			{
-				"name": "dynmus:music/end/creative1",
-				"stream": true
-			},
-			{
-				"name": "dynmus:music/end/creative2",
-				"stream": true
-			},
-			{
-				"name": "dynmus:music/end/creative3",
-				"stream": true
-			},
-			{
-				"name": "dynmus:music/end/creative4",
-				"stream": true
-			}
-		]
-	},
-	"music.end.boss": {
-		"sounds": [
-			{
-				"name": "minecraft:music.dragon",
-				"type": "event"
-			},
-			{
-				"name": "dynmus:music/end/boss/boss1",
-				"stream": true
-			},
-			{
-				"name": "dynmus:music/end/boss/boss2",
-				"stream": true
-			},
-			{
-				"name": "dynmus:music/end/boss/boss3",
-				"stream": true
-			}
-		]
-	}
+  "music.calm1": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/calm1",
+        "stream": true
+      }
+    ]
+  },
+  "music.calm2": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/calm2",
+        "stream": true
+      }
+    ]
+  },
+  "music.calm3": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/calm3",
+        "stream": true
+      }
+    ]
+  },
+  "music.creative1": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/creative1",
+        "stream": true
+      }
+    ]
+  },
+  "music.creative2": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/creative2",
+        "stream": true
+      }
+    ]
+  },
+  "music.creative3": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/creative3",
+        "stream": true
+      }
+    ]
+  },
+  "music.creative4": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/creative4",
+        "stream": true
+      }
+    ]
+  },
+  "music.creative5": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/creative5",
+        "stream": true
+      }
+    ]
+  },
+  "music.creative6": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/creative6",
+        "stream": true
+      }
+    ]
+  },
+  "music.hal1": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/hal1",
+        "stream": true
+      }
+    ]
+  },
+  "music.hal2": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/hal2",
+        "stream": true
+      }
+    ]
+  },
+  "music.hal3": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/hal3",
+        "stream": true
+      }
+    ]
+  },
+  "music.hal4": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/hal4",
+        "stream": true
+      }
+    ]
+  },
+  "music.nuance1": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nuance1",
+        "stream": true
+      }
+    ]
+  },
+  "music.nuance2": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nuance2",
+        "stream": true
+      }
+    ]
+  },
+  "music.piano1": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/piano1",
+        "stream": true
+      }
+    ]
+  },
+  "music.piano2": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/piano2",
+        "stream": true
+      }
+    ]
+  },
+  "music.piano3": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/piano3",
+        "stream": true
+      }
+    ]
+  },
+  "music.aerie": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/swamp/aerie",
+        "stream": true
+      }
+    ]
+  },
+  "music.ancestry": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/ancestry",
+        "stream": true
+      }
+    ]
+  },
+  "music.an_ordinary_day": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/an_ordinary_day",
+        "stream": true
+      }
+    ]
+  },
+  "music.comforting_memories": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/comforting_memories",
+        "stream": true
+      }
+    ]
+  },
+  "music.firebugs": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/swamp/firebugs",
+        "stream": true
+      }
+    ]
+  },
+  "music.floating_dream": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/floating_dream",
+        "stream": true
+      }
+    ]
+  },
+  "music.infinite_amethyst": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/infinite_amethyst",
+        "stream": true
+      }
+    ]
+  },
+  "music.labyrinthine": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/swamp/labyrinthine",
+        "stream": true
+      }
+    ]
+  },
+  "music.left_to_bloom": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/left_to_bloom",
+        "stream": true
+      }
+    ]
+  },
+  "music.one_more_day": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/one_more_day",
+        "stream": true
+      }
+    ]
+  },
+  "music.stand_tall": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/stand_tall",
+        "stream": true
+      }
+    ]
+  },
+  "music.wending": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/wending",
+        "stream": true
+      }
+    ]
+  },
+  "music.end.end": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/end/end",
+        "stream": true
+      }
+    ]
+  },
+  "music.end.creative1": {
+    "sounds": [
+      {
+        "name": "dynmus:music/end/creative1",
+        "stream": true
+      }
+    ]
+  },
+  "music.end.creative2": {
+    "sounds": [
+      {
+        "name": "dynmus:music/end/creative2",
+        "stream": true
+      }
+    ]
+  },
+  "music.end.creative3": {
+    "sounds": [
+      {
+        "name": "dynmus:music/end/creative3",
+        "stream": true
+      }
+    ]
+  },
+  "music.end.creative4": {
+    "sounds": [
+      {
+        "name": "dynmus:music/end/creative4",
+        "stream": true
+      }
+    ]
+  },
+  "music.end.boss": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/end/boss",
+        "stream": true
+      },
+      {
+        "name": "dynmus:music/end/boss/boss1",
+        "stream": true
+      },
+      {
+        "name": "dynmus:music/end/boss/boss2",
+        "stream": true
+      },
+      {
+        "name": "dynmus:music/end/boss/boss3",
+        "stream": true
+      }
+    ]
+  }
 }

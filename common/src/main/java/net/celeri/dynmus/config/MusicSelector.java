@@ -22,97 +22,128 @@ public class MusicSelector implements ConfigData {
 
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles caveMusic = new MusicToggles(
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Creative, MusicToggle.None, MusicToggle.Creative,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.Both, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Creative, MusicToggle.None, MusicToggle.Creative,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.Both, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None
     );
 
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles coldMusic = new MusicToggles(
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Creative, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Creative, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Creative, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Creative, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None
     );
 
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles hotMusic = new MusicToggles(
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Creative,
-            MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Creative,
+        MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None
     );
 
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles niceMusic = new MusicToggles(
-            MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.Creative, MusicToggle.Creative,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None
+        MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.Creative, MusicToggle.Creative,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None
     );
 
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles downMusic = new MusicToggles(
-            MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.Creative, MusicToggle.Creative,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None,
-            MusicToggle.None, MusicToggle.None, MusicToggle.None
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Creative, MusicToggle.Creative,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None
+    );
+
+    @ConfigEntry.Gui.CollapsibleObject
+    public MusicToggles endMusic = new MusicToggles(
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.Creative, MusicToggle.Creative,
+        MusicToggle.Creative, MusicToggle.Creative
     );
 
     public static class MusicToggles {
@@ -210,19 +241,32 @@ public class MusicSelector implements ConfigData {
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public MusicToggle pigstep;
 
+        // End musics
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle end;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle end_creative1;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle end_creative2;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle end_creative3;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle end_creative4;
+
         public MusicToggles(
-                MusicToggle calm1, MusicToggle calm2, MusicToggle calm3,
-                MusicToggle creative1, MusicToggle creative2, MusicToggle creative3, MusicToggle creative4, MusicToggle creative5, MusicToggle creative6,
-                MusicToggle hal1, MusicToggle hal2, MusicToggle hal3, MusicToggle hal4,
-                MusicToggle nuance1, MusicToggle nuance2,
-                MusicToggle piano1, MusicToggle piano2, MusicToggle piano3,
-                MusicToggle aerie, MusicToggle ancestry, MusicToggle an_ordinary_day,
-                MusicToggle comforting_memories, MusicToggle firebugs, MusicToggle floating_dream,
-                MusicToggle infinite_amethyst, MusicToggle labyrinthine, MusicToggle left_to_bloom,
-                MusicToggle one_more_day, MusicToggle stand_tall, MusicToggle wending,
-                MusicToggle thirteen, MusicToggle cat, MusicToggle blocks, MusicToggle chirp, MusicToggle far, MusicToggle mall,
-                MusicToggle mellohi, MusicToggle stal, MusicToggle strad, MusicToggle ward, MusicToggle eleven, MusicToggle wait,
-                MusicToggle otherside, MusicToggle five, MusicToggle pigstep
+            MusicToggle calm1, MusicToggle calm2, MusicToggle calm3,
+            MusicToggle creative1, MusicToggle creative2, MusicToggle creative3, MusicToggle creative4, MusicToggle creative5, MusicToggle creative6,
+            MusicToggle hal1, MusicToggle hal2, MusicToggle hal3, MusicToggle hal4,
+            MusicToggle nuance1, MusicToggle nuance2,
+            MusicToggle piano1, MusicToggle piano2, MusicToggle piano3,
+            MusicToggle aerie, MusicToggle ancestry, MusicToggle an_ordinary_day,
+            MusicToggle comforting_memories, MusicToggle firebugs, MusicToggle floating_dream,
+            MusicToggle infinite_amethyst, MusicToggle labyrinthine, MusicToggle left_to_bloom,
+            MusicToggle one_more_day, MusicToggle stand_tall, MusicToggle wending,
+            MusicToggle thirteen, MusicToggle cat, MusicToggle blocks, MusicToggle chirp, MusicToggle far, MusicToggle mall,
+            MusicToggle mellohi, MusicToggle stal, MusicToggle strad, MusicToggle ward, MusicToggle eleven, MusicToggle wait,
+            MusicToggle otherside, MusicToggle five, MusicToggle pigstep,
+            MusicToggle end, MusicToggle end_creative1, MusicToggle end_creative2, MusicToggle end_creative3, MusicToggle end_creative4
         ) {
             this.calm1 = calm1;
             this.calm2 = calm2;
@@ -269,6 +313,11 @@ public class MusicSelector implements ConfigData {
             this.otherside = otherside;
             this.five = five;
             this.pigstep = pigstep;
+            this.end = end;
+            this.end_creative1 = end_creative1;
+            this.end_creative2 = end_creative2;
+            this.end_creative3 = end_creative3;
+            this.end_creative4 = end_creative4;
         }
     }
 }

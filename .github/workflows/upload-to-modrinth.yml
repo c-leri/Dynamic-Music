@@ -1,0 +1,110 @@
+name: "Build and Publish to Modrinth"
+on:
+  release:
+    types: [ published ]
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: 17
+          cache: 'gradle'
+
+      - name: Build to Fabric with Gradle
+        id: buildfabric
+        run: chmod +x gradlew && ./gradlew :fabric:build
+
+      - name: Find correct Fabric JAR
+        id: findfabricjar
+        run: |
+          output="$(find fabric/build/libs/ ! -name "*-dev.jar" ! -name "*-sources.jar" -type f -printf "%f\n")"
+          echo "::set-output name=jarname::$output"
+
+      - name: Upload Fabric to the GitHub release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: fabric/build/libs/${{ steps.findfabricjar.outputs.jarname }}
+          asset_name: fabric-${{ steps.findfabricjar.outputs.jarname }}
+          asset_content_type: application/java-archive
+
+      - name: Upload Fabric to Modrinth
+        uses: RubixDev/modrinth-upload@v1
+        with:
+          token: ${{ secrets.TOKEN }}
+          file_path: fabric/build/libs/${{ steps.findfabricjar.outputs.jarname }}
+          name: "[Fabric] Dynamic Music ${{ github.event.release.tag_name }}"
+          version: ${{ github.event.release.tag_name }}
+          changelog: ${{ github.event.release.body }}
+          relations: M3yxljrZ:required,jyKnHEDY:required,OFLHUcGo:required
+          game_versions: 1.19.3
+          release_type: release
+          loaders: fabric
+          featured: true
+          project_id: ilfn0HT9
+
+      - name: Upload Fabric to CurseForge
+        uses: itsmeow/curseforge-upload@v3
+        with:
+          game_endpoint: minecraft
+          token: "${{ secrets.CF_API_TOKEN }}"
+          file_path: fabric/build/libs/${{ steps.findfabricjar.outputs.jarname }}
+          display_name: "[Fabric] Dynamic Music ${{ github.event.release.tag_name }}"
+          changelog: ${{ github.event.release.body }}
+          relations: fabric-api:requiredDependency,cloth-config:requiredDependency,architectury-api:requiredDependency
+          game_versions: Minecraft 1.19.3,Java 17,Fabric
+          project_id: 690182
+
+      - name: Build to Forge with Gradle
+        id: buildforge
+        run: chmod +x gradlew && ./gradlew :forge:build
+
+      - name: Find correct Forge JAR
+        id: findforgejar
+        run: |
+          output="$(find forge/build/libs/ ! -name "*-dev.jar" ! -name "*-sources.jar" -type f -printf "%f\n")"
+          echo "::set-output name=jarname::$output"
+
+      - name: Upload Forge to the GitHub release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: forge/build/libs/${{ steps.findforgejar.outputs.jarname }}
+          asset_name: forge-${{ steps.findforgejar.outputs.jarname }}
+          asset_content_type: application/java-archive
+
+      - name: Upload Forge to Modrinth
+        uses: RubixDev/modrinth-upload@v1
+        with:
+          token: ${{ secrets.TOKEN }}
+          file_path: forge/build/libs/${{ steps.findforgejar.outputs.jarname }}
+          name: "[Forge] Dynamic Music ${{ github.event.release.tag_name }}"
+          version: ${{ github.event.release.tag_name }}
+          changelog: ${{ github.event.release.body }}
+          relations: VYURtAAK:required,lReYANwU:required
+          game_versions: 1.19.3
+          release_type: release
+          loaders: forge
+          featured: true
+          project_id: ilfn0HT9
+
+      - name: Upload Fabric to CurseForge
+        uses: itsmeow/curseforge-upload@v3
+        with:
+          game_endpoint: minecraft
+          token: "${{ secrets.CF_API_TOKEN }}"
+          file_path: forge/build/libs/${{ steps.findforgejar.outputs.jarname }}
+          display_name: "[Forge] Dynamic Music ${{ github.event.release.tag_name }}"
+          changelog: ${{ github.event.release.body }}
+          relations: cloth-config:requiredDependency,architectury-api:requiredDependency
+          game_versions: Minecraft 1.19.3,Java 17,Forge
+          project_id: 690182

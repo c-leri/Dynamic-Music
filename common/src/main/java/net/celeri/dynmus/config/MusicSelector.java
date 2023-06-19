@@ -20,6 +20,7 @@ public class MusicSelector implements ConfigData {
         }
     }
 
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles caveMusic = new MusicToggles(
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -40,6 +41,7 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None
     );
 
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles coldMusic = new MusicToggles(
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -60,6 +62,7 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None
     );
 
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles hotMusic = new MusicToggles(
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -80,6 +83,7 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None
     );
 
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles niceMusic = new MusicToggles(
         MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
@@ -100,6 +104,7 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None
     );
 
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles downMusic = new MusicToggles(
         MusicToggle.None, MusicToggle.Both, MusicToggle.None,
@@ -120,6 +125,7 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None
     );
 
+    @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles endMusic = new MusicToggles(
         MusicToggle.None, MusicToggle.None, MusicToggle.None,

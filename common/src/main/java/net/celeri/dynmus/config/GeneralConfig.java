@@ -63,17 +63,10 @@ public class GeneralConfig implements ConfigData {
 
     public static class CaveDetection {
         @ConfigEntry.Gui.Tooltip()
-        public int searchRange = 5;
+        public int searchRange = 6;
 
         @ConfigEntry.Gui.Tooltip()
-        @ConfigEntry.BoundedDiscrete(max = 15)
-        public int darknessCap = 8;
-
-        @ConfigEntry.Gui.Tooltip()
-        public double darknessPercent = 0.3;
-
-        @ConfigEntry.Gui.Tooltip()
-        public double stonePercent = 0.15;
+        public double stonePercent = 0.6;
     }
 
     public static class MineshaftDetection {
@@ -81,6 +74,6 @@ public class GeneralConfig implements ConfigData {
         public int searchRange = 2;
 
         @ConfigEntry.Gui.Tooltip()
-        public double percent = 0.1;
+        public double percent = 0.2;
     }
 }

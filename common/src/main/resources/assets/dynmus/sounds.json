@@ -143,24 +143,40 @@
 			}
 		]
 	},
-	"music.end.creative": {
+	"music.end.end": {
 		"sounds": [
 			{
-				"name": "minecraft:music.end",
-				"type": "event"
-			},
+				"name": "minecraft:music/game/end/end",
+				"stream": true
+			}
+		]
+	},
+	"music.end.creative1": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative1",
 				"stream": true
-			},
+			}
+		]
+	},
+	"music.end.creative2": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative2",
 				"stream": true
-			},
+			}
+		]
+	},
+	"music.end.creative3": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative3",
 				"stream": true
-			},
+			}
+		]
+	},
+	"music.end.creative4": {
+		"sounds": [
 			{
 				"name": "dynmus:music/end/creative4",
 				"stream": true
@@ -170,8 +186,8 @@
 	"music.end.boss": {
 		"sounds": [
 			{
-				"name": "minecraft:music.dragon",
-				"type": "event"
+				"name": "minecraft:music/game/end/boss",
+				"stream": true
 			},
 			{
 				"name": "dynmus:music/end/boss/boss1",

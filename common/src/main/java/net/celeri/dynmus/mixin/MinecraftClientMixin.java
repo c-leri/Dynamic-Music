@@ -15,10 +15,13 @@ import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
+import org.slf4j.Logger;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
@@ -31,6 +34,19 @@ public class MinecraftClientMixin {
 
     @Shadow
     public ClientLevel level;
+    private static int tickCounter = 0;
+
+    @Inject(method = "tick", at = @At("RETURN"))
+    private void dynmus$tick(CallbackInfo ci) {
+        tickCounter++;
+
+        // Execute cave detection algorithm every second
+        if (tickCounter >= 20 && level != null && player != null) {
+            tickCounter = 0;
+
+            DynamicMusic.tick(level, player.blockPosition());
+        }
+    }
 
     @Inject(method = "getSituationalMusic", at = @At("RETURN"), cancellable = true)
     private void dynmus$getSituationalMusic(CallbackInfoReturnable<Music> ci) {
@@ -56,7 +72,7 @@ public class MinecraftClientMixin {
             ) {
                 if (
                     // In cave
-                    DynamicMusic.isInCave(level, player.blockPosition())
+                    DynamicMusic.isInCave()
                         // Cave music enabled
                         && config.generalConfig.musicTypesToggles.caveMusic
                         // At least one music enabled
@@ -118,7 +134,7 @@ public class MinecraftClientMixin {
             ) {
                 if (
                     // In cave
-                    DynamicMusic.isInCave(level, player.blockPosition())
+                    DynamicMusic.isInCave()
                         // Cave music enabled
                         && config.generalConfig.musicTypesToggles.caveMusic
                         // At least one music enabled

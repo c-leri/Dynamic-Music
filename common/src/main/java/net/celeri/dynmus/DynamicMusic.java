@@ -13,7 +13,10 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.lighting.LayerLightEventListener;
 import net.minecraft.world.level.material.Material;
+
+import java.util.stream.IntStream;
 
 public class DynamicMusic {
     public static final String MOD_ID = "dynmus";
@@ -34,111 +37,87 @@ public class DynamicMusic {
         SOUND_EVENTS_REGISTER.register();
     }
 
-    public static boolean isInCave(Level level, BlockPos pos) {
+    private static boolean inCave = false;
+
+    private static boolean inPseudoMinecraft = false;
+
+    private static double averageDarkness = 15;
+
+    public static void tick(Level level, BlockPos pos) {
         DynamicMusicConfig config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
+        LayerLightEventListener blockLightListener = level.getLightEngine().getLayerListener(LightLayer.BLOCK);
 
-        int searchRange = config.generalConfig.caveDetection.searchRange;
+        int caveSearchRange = config.generalConfig.caveDetection.searchRange;
+        int mineshaftSearchRange = config.generalConfig.mineshaftDetection.searchRange;
 
-        if (
-            searchRange >= 1
-                // Block above position
-                && !level.canSeeSky(pos)
-                && (config.generalConfig.caveDetection.darknessPercent < 1 || config.generalConfig.caveDetection.stonePercent < 1)
-        ) {
-            int darkBlocks = 0;
-            int stoneBlocks = 0;
-            int airBlocks = 0;
-
-            for (int x = -searchRange; x < searchRange; x++) {
-                for (int y = -searchRange; y < searchRange; y++) {
-                    for (int z = -searchRange; z < searchRange; z++) {
-                        BlockPos offsetPos = pos.offset(x, y, z);
-                        if (level.isEmptyBlock(offsetPos)) {
-                            airBlocks++;
-                            if (level.getLightEngine().getLayerListener(LightLayer.BLOCK).getLightValue(offsetPos)
-                                <= config.generalConfig.caveDetection.darknessCap) {
-                                darkBlocks++;
-                            }
-                        }
-
-                        Material blockMaterial = level.getBlockState(offsetPos).getMaterial();
-                        if (blockMaterial == Material.LAVA) {
-                            darkBlocks++;
-                        } else if (blockMaterial == Material.STONE || blockMaterial == Material.SCULK) {
-                            stoneBlocks++;
-                        }
-                    }
-                }
-            }
-
-            double blockCount = Math.pow(searchRange * 2, 3);
-
-            double stonePercentage = ((double) stoneBlocks) / (blockCount);
-            double darkPercentage = ((double) darkBlocks) / ((double) airBlocks);
-
-            return darkPercentage >= config.generalConfig.caveDetection.darknessPercent && stonePercentage >= config.generalConfig.caveDetection.stonePercent;
-        }
-        return false;
-    }
-
-    public static double getAverageDarkness(Level level, BlockPos pos) {
-        DynamicMusicConfig config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
-
-        int searchRange = config.generalConfig.caveDetection.searchRange;
+        int searchRange = Math.max(caveSearchRange, mineshaftSearchRange);
 
         if (searchRange >= 1) {
             int airBlocks = 0;
-            int lightTogether = 0;
+            int lightSum = 0;
+
+            int caveAllSolidBlocks = 0;
+            int caveBlocks = 0;
+
+            int mineshaftAllSolidBlock = 0;
+            int mineshaftBlocks = 0;
 
             for (int x = -searchRange; x < searchRange; x++) {
                 for (int y = -searchRange; y < searchRange; y++) {
                     for (int z = -searchRange; z < searchRange; z++) {
-                        BlockPos offsetPos = pos.offset(x, y, z);
-                        if (level.isEmptyBlock(offsetPos)) {
+                        BlockPos offsetPos = new BlockPos(pos).offset(x, y, z);
+
+                        Material blockMaterial = level.getBlockState(offsetPos).getMaterial();
+
+                        if (blockMaterial == Material.AIR) {
                             airBlocks++;
-                            lightTogether += level.getLightEngine().getLayerListener(LightLayer.BLOCK).getLightValue(offsetPos);
+
+                            lightSum += blockLightListener.getLightValue(offsetPos);
+                        } else if (blockMaterial != Material.LAVA && blockMaterial != Material.WATER) {
+                            int biggestCoordinate = IntStream.of(x, y, z).max().getAsInt();
+                            int smallestCoordinate = IntStream.of(x, y, z).min().getAsInt();
+
+                            // Coordinates within cave search range
+                            if (smallestCoordinate > -caveSearchRange && biggestCoordinate < caveSearchRange) {
+                                caveAllSolidBlocks++;
+
+                                if (
+                                    blockMaterial == Material.STONE
+                                        || blockMaterial == Material.SCULK
+                                        || blockMaterial == Material.AMETHYST
+                                ) caveBlocks++;
+                            }
+
+                            // Coordinates within mineshaft search range
+                            if (smallestCoordinate > -mineshaftSearchRange && biggestCoordinate < mineshaftSearchRange) {
+                                mineshaftAllSolidBlock++;
+
+                                if (
+                                    blockMaterial == Material.WOOD || blockMaterial == Material.WEB
+                                        || level.getBlockState(offsetPos).getBlock() == Blocks.RAIL
+                                ) mineshaftBlocks++;
+                            }
                         }
+
                     }
                 }
             }
 
-            return (((double) lightTogether) / ((double) airBlocks));
+            inCave = !level.canSeeSky(pos) && config.generalConfig.caveDetection.stonePercent <= (double) caveBlocks / caveAllSolidBlocks;
+            inPseudoMinecraft = inCave && config.generalConfig.mineshaftDetection.percent <= (double) mineshaftBlocks / mineshaftAllSolidBlock;
+            averageDarkness = (double) lightSum / airBlocks;
         }
-        return 15;
     }
 
-    public static boolean isInPseudoMinecraft(Level level, BlockPos pos) {
-        DynamicMusicConfig config = AutoConfig.getConfigHolder(DynamicMusicConfig.class).getConfig();
+    public static boolean isInCave() {
+        return inCave;
+    }
 
-        int searchRange = config.generalConfig.mineshaftDetection.searchRange;
+    public static boolean isInPseudoMinecraft() {
+        return inPseudoMinecraft;
+    }
 
-        if (searchRange >= 1 && config.generalConfig.mineshaftDetection.percent < 1) {
-
-            int pseudoMineshaftBlocks = 0;
-            int airBlocks = 0;
-
-            for (int x = -searchRange; x < searchRange; x++) {
-                for (int y = -searchRange; y < searchRange; y++) {
-                    for (int z = -searchRange; z < searchRange; z++) {
-                        BlockPos offsetPos = pos.offset(x, y, z);
-
-                        if (level.getBlockState(offsetPos).getMaterial() == Material.WOOD || level.getBlockState(offsetPos).getBlock() == Blocks.RAIL || level.getBlockState(offsetPos).getMaterial() == Material.WEB) {
-                            pseudoMineshaftBlocks++;
-                        }
-
-                        if (level.isEmptyBlock(offsetPos)) {
-                            airBlocks++;
-                        }
-
-                    }
-                }
-            }
-
-            double mineshaftPercentage = ((double) pseudoMineshaftBlocks) / ((double) airBlocks);
-
-            return mineshaftPercentage >= config.generalConfig.mineshaftDetection.percent;
-        }
-
-        return false;
+    public static double getAverageDarkness() {
+        return averageDarkness;
     }
 }

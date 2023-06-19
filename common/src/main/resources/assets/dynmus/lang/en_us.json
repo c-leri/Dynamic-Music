@@ -46,6 +46,7 @@
 	"text.autoconfig.dynmus.category.musicSelector": "Music Selector",
 
 	"text.autoconfig.dynmus.option.musicSelector.caveMusic": "Cave Music",
+	"text.autoconfig.dynmus.option.musicSelector.caveMusic.@Tooltip": "Music that plays in caves",
 	"text.autoconfig.dynmus.option.musicSelector.caveMusic.creative1": "Biome Fest",
 	"text.autoconfig.dynmus.option.musicSelector.caveMusic.creative2": "Blind Spots",
 	"text.autoconfig.dynmus.option.musicSelector.caveMusic.creative3": "Haunt Muskie",
@@ -98,6 +99,7 @@
 	"text.autoconfig.dynmus.option.musicSelector.caveMusic.end_creative4": "Edreit",
 
 	"text.autoconfig.dynmus.option.musicSelector.coldMusic": "Cold Music",
+	"text.autoconfig.dynmus.option.musicSelector.coldMusic.@Tooltip": "Music that plays in cold biomes when the sun is out",
 	"text.autoconfig.dynmus.option.musicSelector.coldMusic.creative1": "Biome Fest",
 	"text.autoconfig.dynmus.option.musicSelector.coldMusic.creative2": "Blind Spots",
 	"text.autoconfig.dynmus.option.musicSelector.coldMusic.creative3": "Haunt Muskie",
@@ -150,6 +152,7 @@
 	"text.autoconfig.dynmus.option.musicSelector.coldMusic.end_creative4": "Edreit",
 
 	"text.autoconfig.dynmus.option.musicSelector.hotMusic": "Hot Music",
+	"text.autoconfig.dynmus.option.musicSelector.hotMusic.@Tooltip": "Music that plays in hot biomes when the sun is out",
 	"text.autoconfig.dynmus.option.musicSelector.hotMusic.creative1": "Biome Fest",
 	"text.autoconfig.dynmus.option.musicSelector.hotMusic.creative2": "Blind Spots",
 	"text.autoconfig.dynmus.option.musicSelector.hotMusic.creative3": "Haunt Muskie",
@@ -202,6 +205,7 @@
 	"text.autoconfig.dynmus.option.musicSelector.hotMusic.end_creative4": "Edreit",
 
 	"text.autoconfig.dynmus.option.musicSelector.niceMusic": "Nice Music",
+	"text.autoconfig.dynmus.option.musicSelector.niceMusic.@Tooltip": "Music that plays in temperate biomes when the sun is out",
 	"text.autoconfig.dynmus.option.musicSelector.niceMusic.creative1": "Biome Fest",
 	"text.autoconfig.dynmus.option.musicSelector.niceMusic.creative2": "Blind Spots",
 	"text.autoconfig.dynmus.option.musicSelector.niceMusic.creative3": "Haunt Muskie",
@@ -254,6 +258,7 @@
 	"text.autoconfig.dynmus.option.musicSelector.niceMusic.end_creative4": "Edreit",
 
 	"text.autoconfig.dynmus.option.musicSelector.downMusic": "Down Music",
+	"text.autoconfig.dynmus.option.musicSelector.downMusic.@Tooltip": "Music that plays in during the night and when its raining",
 	"text.autoconfig.dynmus.option.musicSelector.downMusic.creative1": "Biome Fest",
 	"text.autoconfig.dynmus.option.musicSelector.downMusic.creative2": "Blind Spots",
 	"text.autoconfig.dynmus.option.musicSelector.downMusic.creative3": "Haunt Muskie",
@@ -306,6 +311,7 @@
 	"text.autoconfig.dynmus.option.musicSelector.downMusic.end_creative4": "Edreit",
 
 	"text.autoconfig.dynmus.option.musicSelector.endMusic": "End Music",
+	"text.autoconfig.dynmus.option.musicSelector.endMusic.@Tooltip": "Music that plays in the End",
 	"text.autoconfig.dynmus.option.musicSelector.endMusic.creative1": "Biome Fest",
 	"text.autoconfig.dynmus.option.musicSelector.endMusic.creative2": "Blind Spots",
 	"text.autoconfig.dynmus.option.musicSelector.endMusic.creative3": "Haunt Muskie",

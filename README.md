@@ -1,9 +1,9 @@
 # Dynamic Music
 
 A fork of [LudoCrypt](https://github.com/LudoCrypt)'s [Dynamic Music](https://github.com/LudoCrypt/Dynamic-Music),
-updated to 1.19.3 with extended configuration abilities!
+updated to 1.20 with extended configuration abilities!
 
-Complete with all the new musics from 1.17 and 1.19 !
+Complete with all the new musics from 1.17, 1.19 and 1.20 !
 
 Now with support for both Fabric and Forge thanks to [Architectury](https://github.com/architectury/architectury-api)
 

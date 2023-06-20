@@ -74,6 +74,6 @@ public class GeneralConfig implements ConfigData {
         public int searchRange = 2;
 
         @ConfigEntry.Gui.Tooltip()
-        public double percent = 0.2;
+        public double percent = 0.05;
     }
 }

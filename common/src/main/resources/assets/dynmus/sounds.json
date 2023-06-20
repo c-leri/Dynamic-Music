@@ -159,6 +159,14 @@
       }
     ]
   },
+  "music.a_familiar_room": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/a_familiar_room",
+        "stream": true
+      }
+    ]
+  },
   "music.an_ordinary_day": {
     "sounds": [
       {
@@ -167,10 +175,34 @@
       }
     ]
   },
+  "music.bromeliad": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/bromeliad",
+        "stream": true
+      }
+    ]
+  },
   "music.comforting_memories": {
     "sounds": [
       {
         "name": "minecraft:music/game/comforting_memories",
+        "stream": true
+      }
+    ]
+  },
+  "music.crescent_dunes": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/crescent_dunes",
+        "stream": true
+      }
+    ]
+  },
+  "music.echo_in_the_wind": {
+    "sounds": [
+      {
+        "name": "minecraft:music/game/echo_in_the_wind",
         "stream": true
       }
     ]

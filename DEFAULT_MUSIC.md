@@ -20,8 +20,12 @@
 | Mice on Venus       | minecraft:music/game/piano3              |                   |                   |                   |                   | survival/creative |                   |
 | Aerie               | minecraft:music/game/swamp/aerie         | survival/creative |                   | survival/creative |                   |                   |                   |
 | Ancestry            | minecraft:music/game/ancestry            | survival/creative |                   |                   |                   |                   |                   |
+| A Familiar Room     | minecraft:music/game/a_familiar_room     |                   |                   |                   | survival/creative |                   |                   |
 | An Ordinary Day     | minecraft:music/game/an_ordinary_day     | survival/creative |                   |                   | survival/creative |                   |                   |
+| Bromeliad           | minecraft:music/game/bromeliad           |                   | survival/creative |                   |                   |                   |                   |
 | Comforting Memories | minecraft:music/game/comforting_memories |                   | survival/creative |                   |                   | survival/creative |                   |
+| Crescent Dunes      | minecraft:music/game/crescent_dunes      |                   |                   | survival/creative |                   |                   |                   |
+| Echo in the Wind    | minecraft:music/game/echo_in_the_wind    |                   |                   |                   |                   | survival/creative |                   |
 | Firebugs            | minecraft:music/game/swamp/firebugs      |                   |                   | survival/creative |                   | survival/creative |                   |
 | Floating Dream      | minecraft:music/game/floating_dream      |                   |                   | survival/creative |                   |                   |                   |
 | Infinite Amethyst   | minecraft:music/game/infinite_amethyst   | survival/creative |                   |                   |                   |                   |                   |

@@ -6,8 +6,8 @@ on:
 
 env:
   MINECRAFT_VERSION: |
-    1.19.3
-    1.19.4
+    1.20
+    1.20.1
   JAVA_VERSION: 17
   VERSION: ${{ github.event.release.tag_name }}
   RELEASE_NAME: ${{ github.event.release.name }}

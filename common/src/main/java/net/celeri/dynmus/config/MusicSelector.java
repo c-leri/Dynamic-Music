@@ -23,21 +23,29 @@ public class MusicSelector implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles caveMusic = new MusicToggles(
+        // Overworld music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
         MusicToggle.Creative, MusicToggle.None, MusicToggle.Creative,
         MusicToggle.Both, MusicToggle.None, MusicToggle.None,
         MusicToggle.Both, MusicToggle.None, MusicToggle.None,
         MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-        MusicToggle.Both, MusicToggle.Both, MusicToggle.Both,
-        MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-        MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
         MusicToggle.Both, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.Both,
+
+        // Discs
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // End music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None
     );
@@ -45,6 +53,7 @@ public class MusicSelector implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles coldMusic = new MusicToggles(
+        // Overworld music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.Creative, MusicToggle.None,
         MusicToggle.None, MusicToggle.Creative, MusicToggle.None,
@@ -52,14 +61,21 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None, MusicToggle.Both,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None,
+
+        // Discs
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // End music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None
     );
@@ -67,6 +83,7 @@ public class MusicSelector implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles hotMusic = new MusicToggles(
+        // Overworld music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.Creative,
         MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
@@ -74,14 +91,21 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.Both, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
-        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // Discs
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.Both,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // End music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None
     );
@@ -89,21 +113,29 @@ public class MusicSelector implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles niceMusic = new MusicToggles(
+        // Overworld music
         MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
         MusicToggle.None, MusicToggle.Creative, MusicToggle.Creative,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.Both,
-        MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-        MusicToggle.None, MusicToggle.Both, MusicToggle.None,
-        MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None,
+
+        // Discs
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // End music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None
     );
@@ -111,6 +143,7 @@ public class MusicSelector implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles downMusic = new MusicToggles(
+        // Overworld music
         MusicToggle.None, MusicToggle.Both, MusicToggle.None,
         MusicToggle.Creative, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.Creative, MusicToggle.Creative,
@@ -118,14 +151,21 @@ public class MusicSelector implements ConfigData {
         MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
         MusicToggle.Both, MusicToggle.None, MusicToggle.Both,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.Both, MusicToggle.Both, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.Both, MusicToggle.Both,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.Both, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // Discs
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
-        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // End music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None
     );
@@ -133,6 +173,7 @@ public class MusicSelector implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     @ConfigEntry.Gui.CollapsibleObject
     public MusicToggles endMusic = new MusicToggles(
+        // Overworld music
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
@@ -144,10 +185,17 @@ public class MusicSelector implements ConfigData {
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // Discs
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
         MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None, MusicToggle.None, MusicToggle.None,
+        MusicToggle.None,
+
+        // End music
         MusicToggle.Both, MusicToggle.Creative, MusicToggle.Creative,
         MusicToggle.Creative, MusicToggle.Creative
     );
@@ -195,9 +243,17 @@ public class MusicSelector implements ConfigData {
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public MusicToggle ancestry;
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle a_familiar_room;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public MusicToggle an_ordinary_day;
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle bromeliad;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public MusicToggle comforting_memories;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle crescent_dunes;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle echo_in_the_wind;
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public MusicToggle firebugs;
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
@@ -246,6 +302,8 @@ public class MusicSelector implements ConfigData {
         public MusicToggle five;
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public MusicToggle pigstep;
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MusicToggle relic;
 
         // End musics
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
@@ -265,15 +323,17 @@ public class MusicSelector implements ConfigData {
             MusicToggle hal1, MusicToggle hal2, MusicToggle hal3, MusicToggle hal4,
             MusicToggle nuance1, MusicToggle nuance2,
             MusicToggle piano1, MusicToggle piano2, MusicToggle piano3,
-            MusicToggle aerie, MusicToggle ancestry, MusicToggle an_ordinary_day,
-            MusicToggle comforting_memories, MusicToggle firebugs, MusicToggle floating_dream,
+            MusicToggle aerie, MusicToggle ancestry, MusicToggle a_familiar_room, MusicToggle an_ordinary_day,
+            MusicToggle bromeliad, MusicToggle comforting_memories, MusicToggle crescent_dunes,
+            MusicToggle echo_in_the_wind, MusicToggle firebugs, MusicToggle floating_dream,
             MusicToggle infinite_amethyst, MusicToggle labyrinthine, MusicToggle left_to_bloom,
             MusicToggle one_more_day, MusicToggle stand_tall, MusicToggle wending,
             MusicToggle thirteen, MusicToggle cat, MusicToggle blocks, MusicToggle chirp, MusicToggle far, MusicToggle mall,
             MusicToggle mellohi, MusicToggle stal, MusicToggle strad, MusicToggle ward, MusicToggle eleven, MusicToggle wait,
-            MusicToggle otherside, MusicToggle five, MusicToggle pigstep,
+            MusicToggle otherside, MusicToggle five, MusicToggle pigstep, MusicToggle relic,
             MusicToggle end, MusicToggle end_creative1, MusicToggle end_creative2, MusicToggle end_creative3, MusicToggle end_creative4
         ) {
+            // Overworld music
             this.calm1 = calm1;
             this.calm2 = calm2;
             this.calm3 = calm3;
@@ -294,8 +354,12 @@ public class MusicSelector implements ConfigData {
             this.piano3 = piano3;
             this.aerie = aerie;
             this.ancestry = ancestry;
+            this.a_familiar_room = a_familiar_room;
             this.an_ordinary_day = an_ordinary_day;
+            this.bromeliad = bromeliad;
             this.comforting_memories = comforting_memories;
+            this.crescent_dunes = crescent_dunes;
+            this.echo_in_the_wind = echo_in_the_wind;
             this.firebugs = firebugs;
             this.floating_dream = floating_dream;
             this.infinite_amethyst = infinite_amethyst;
@@ -304,6 +368,8 @@ public class MusicSelector implements ConfigData {
             this.one_more_day = one_more_day;
             this.stand_tall = stand_tall;
             this.wending = wending;
+
+            // Discs
             this.thirteen = thirteen;
             this.cat = cat;
             this.blocks = blocks;
@@ -319,6 +385,9 @@ public class MusicSelector implements ConfigData {
             this.otherside = otherside;
             this.five = five;
             this.pigstep = pigstep;
+            this.relic = relic;
+
+            // End music
             this.end = end;
             this.end_creative1 = end_creative1;
             this.end_creative2 = end_creative2;

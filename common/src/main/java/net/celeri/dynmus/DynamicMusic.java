@@ -12,10 +12,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.lighting.LayerLightEventListener;
-import net.minecraft.world.level.material.Material;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class DynamicMusic {
@@ -67,13 +68,13 @@ public class DynamicMusic {
                     for (int z = -searchRange; z < searchRange; z++) {
                         BlockPos offsetPos = new BlockPos(pos).offset(x, y, z);
 
-                        Material blockMaterial = level.getBlockState(offsetPos).getMaterial();
+                        Block block = level.getBlockState(offsetPos).getBlock();
 
-                        if (blockMaterial == Material.AIR) {
+                        if (block == Blocks.AIR) {
                             airBlocks++;
 
                             lightSum += blockLightListener.getLightValue(offsetPos);
-                        } else if (blockMaterial != Material.LAVA && blockMaterial != Material.WATER) {
+                        } else if (block != Blocks.LAVA && block != Blocks.WATER) {
                             int biggestCoordinate = IntStream.of(x, y, z).max().getAsInt();
                             int smallestCoordinate = IntStream.of(x, y, z).min().getAsInt();
 
@@ -81,21 +82,14 @@ public class DynamicMusic {
                             if (smallestCoordinate > -caveSearchRange && biggestCoordinate < caveSearchRange) {
                                 caveAllSolidBlocks++;
 
-                                if (
-                                    blockMaterial == Material.STONE
-                                        || blockMaterial == Material.SCULK
-                                        || blockMaterial == Material.AMETHYST
-                                ) caveBlocks++;
+                                if (isCaveBlock(block)) caveBlocks++;
                             }
 
                             // Coordinates within mineshaft search range
                             if (smallestCoordinate > -mineshaftSearchRange && biggestCoordinate < mineshaftSearchRange) {
                                 mineshaftAllSolidBlock++;
 
-                                if (
-                                    blockMaterial == Material.WOOD || blockMaterial == Material.WEB
-                                        || level.getBlockState(offsetPos).getBlock() == Blocks.RAIL
-                                ) mineshaftBlocks++;
+                                if (isMineshaftBlock(block)) mineshaftBlocks++;
                             }
                         }
 
@@ -107,6 +101,35 @@ public class DynamicMusic {
             inPseudoMinecraft = inCave && config.generalConfig.mineshaftDetection.percent <= (double) mineshaftBlocks / mineshaftAllSolidBlock;
             averageDarkness = (double) lightSum / airBlocks;
         }
+    }
+
+    private static final List<Block> caveBlocks = List.of(
+        Blocks.ANDESITE, Blocks.GRANITE, Blocks.DIORITE, Blocks.COBBLESTONE, Blocks.INFESTED_COBBLESTONE, Blocks.MOSSY_COBBLESTONE,
+        Blocks.TUFF, Blocks.CALCITE, Blocks.DRIPSTONE_BLOCK, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.DEEPSLATE,
+        Blocks.INFESTED_DEEPSLATE, Blocks.COBBLED_DEEPSLATE, Blocks.STONE, Blocks.INFESTED_STONE, Blocks.STONE_BRICKS,
+        Blocks.INFESTED_STONE_BRICKS, Blocks.BEDROCK, Blocks.OBSIDIAN, Blocks.SCULK, Blocks.SCULK_VEIN,
+        Blocks.AMETHYST_BLOCK, Blocks.AMETHYST_CLUSTER, Blocks.COAL_ORE, Blocks.COPPER_ORE, Blocks.IRON_ORE,
+        Blocks.GOLD_ORE, Blocks.EMERALD_ORE, Blocks.LAPIS_ORE, Blocks.REDSTONE_ORE, Blocks.DIAMOND_ORE,
+        Blocks.DEEPSLATE_COAL_ORE, Blocks.DEEPSLATE_COPPER_ORE, Blocks.DEEPSLATE_IRON_ORE, Blocks.DEEPSLATE_GOLD_ORE,
+        Blocks.DEEPSLATE_EMERALD_ORE, Blocks.DEEPSLATE_LAPIS_ORE, Blocks.DEEPSLATE_REDSTONE_ORE, Blocks.DEEPSLATE_DIAMOND_ORE,
+        Blocks.BASALT, Blocks.POLISHED_BASALT, Blocks.BLACKSTONE, Blocks.MAGMA_BLOCK, Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
+        Blocks.CLAY, Blocks.MOSS_BLOCK, Blocks.AZALEA, Blocks.FLOWERING_AZALEA
+    );
+
+    private static boolean isCaveBlock(Block block) {
+        return caveBlocks.stream().anyMatch(caveBlock -> block == caveBlock);
+    }
+
+    private static final List<Block> mineshaftBlocks = List.of(
+        Blocks.OAK_PLANKS, Blocks.OAK_FENCE, Blocks.DARK_OAK_PLANKS, Blocks.DARK_OAK_FENCE,
+        Blocks.ACACIA_PLANKS, Blocks.ACACIA_FENCE, Blocks.BIRCH_PLANKS, Blocks.BIRCH_FENCE,
+        Blocks.CHERRY_PLANKS, Blocks.CHERRY_FENCE, Blocks.JUNGLE_PLANKS, Blocks.JUNGLE_FENCE,
+        Blocks.MANGROVE_PLANKS, Blocks.MANGROVE_FENCE, Blocks.SPRUCE_PLANKS, Blocks.SPRUCE_FENCE,
+        Blocks.RAIL
+    );
+
+    private static boolean isMineshaftBlock(Block block) {
+        return mineshaftBlocks.stream().anyMatch(mineshaftBlock -> block == mineshaftBlock);
     }
 
     public static boolean isInCave() {

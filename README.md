@@ -28,4 +28,4 @@ This mod includes several musics composed by LudoCrypt that play in the End dime
     - [Eccedentesiant](https://ludocrypt.bandcamp.com/track/eccedentesiast)
 
 You can find a list of the musics that will play by default in each situation
-in [this file](https://github.com/c-leri/Dynamic-Music/blob/1.19.3-architectury/DEFAULT_MUSIC.md)
+in [this file](https://github.com/c-leri/Dynamic-Music/blob/1.20-architectury/DEFAULT_MUSIC.md)

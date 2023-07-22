@@ -1,11 +1,9 @@
 # Dynamic Music
 
-A fork of [LudoCrypt](https://github.com/LudoCrypt)'s [Dynamic Music](https://github.com/LudoCrypt/Dynamic-Music), with
-extended configuration abilities!
-
-Complete with all the new musics from 1.17!
-
-Now with support for both Fabric and Forge thanks to [Architectury](https://github.com/architectury/architectury-api)
+This branch of [c-leri's](https://github.com/c-leri) Dynamic Music comes from 
+[Spongecade's](https://github.com/spongecade) [DynamicMusic-Legacy](https://github.com/Spongecade/DynamicMusic-Legacy), both projects being a fork of
+[LudoCrypt's](https://github.com/LudoCrypt) [Dynamic Music](https://github.com/LudoCrypt/Dynamic-Music). The sole purpose of this branch,
+is to fix some bugs present in Ludocrypt's 1.16 fabric version while also backporting some features from Ludocrypt's fabric 1.17 version
 
 ---
 
@@ -26,6 +24,3 @@ This mod includes several musics composed by LudoCrypt that play in the End dime
     - [Granted to End](https://ludocrypt.bandcamp.com/track/granted-to-end)
     - [Boats and Butterflies](https://ludocrypt.bandcamp.com/track/boats-and-butterflies)
     - [Eccedentesiant](https://ludocrypt.bandcamp.com/track/eccedentesiast)
-
-You can find a list of the musics that will play by default in each situation
-in [this file](https://github.com/c-leri/Dynamic-Music/blob/1.17.1-architectury/DEFAULT_MUSIC.md)

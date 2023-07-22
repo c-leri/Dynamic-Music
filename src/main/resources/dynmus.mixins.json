@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "net.spongecade.dynmus.mixin",
+	"compatibilityLevel": "JAVA_8",
+	"client": [
+		"MinecraftClientMixin",
+		"BiomeEffectSoundPlayerMixin",
+		"PositionedSoundInstanceMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "dynmus",
+	"version": "${version}",
+	"name": "Dynamic Music Legacy",
+	"description": "Adds more dynamic music ques, and more music itself for that!",
+	"authors": [
+		"Spongecade",
+		"LudoCrypt"
+	],
+	"contributors": [
+		"celeri"
+	],
+	"contact": {
+		"homepage": "https://github.com/c-leri/Dynamic-Music",
+		"sources": "https://github.com/c-leri/Dynamic-Music",
+		"issues": "https://github.com/c-leri/Dynamic-Music/issues"
+	},
+	"license": "LGPLv3",
+	"icon": "assets/dynmus/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"net.spongecade.dynmus.DynamicMusic"
+		],
+		"modmenu": [
+			"net.spongecade.dynmus.config.DynamicMusicModMenuCompat"
+		]
+	},
+	"mixins": [
+		"dynmus.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.7.4",
+		"fabric": "*",
+		"minecraft": "1.16.x"
+	}
+}

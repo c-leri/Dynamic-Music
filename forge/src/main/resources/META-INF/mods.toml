@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
-issueTrackerURL = "https://github.com/celestomm/Dynamic-Music/issues"
+issueTrackerURL = "https://github.com/c-leri/Dynamic-Music/issues"
 license = "LGPLv3"
 
 [[mods]]

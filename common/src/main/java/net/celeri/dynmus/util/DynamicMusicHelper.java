@@ -21,7 +21,7 @@ public class DynamicMusicHelper {
     private static final Random random = new Random();
 
     private static final List<String> recordNames = List.of(
-        "13", "cat", "blocks", "chirp", "far", "mall",
+        "13", "cat", "data/dynmus/tags/blocks", "chirp", "far", "mall",
         "mellohi", "stal", "strad", "ward", "11", "wait",
         "otherside", "5", "pigstep", "relic"
     );
@@ -142,7 +142,7 @@ public class DynamicMusicHelper {
 
                 Map.entry("13", config.musicSelector.caveMusic.thirteen),
                 Map.entry("cat", config.musicSelector.caveMusic.cat),
-                Map.entry("blocks", config.musicSelector.caveMusic.blocks),
+                Map.entry("data/dynmus/tags/blocks", config.musicSelector.caveMusic.blocks),
                 Map.entry("chirp", config.musicSelector.caveMusic.chirp),
                 Map.entry("far", config.musicSelector.caveMusic.far),
                 Map.entry("mall", config.musicSelector.caveMusic.mall),
@@ -201,7 +201,7 @@ public class DynamicMusicHelper {
 
                 Map.entry("13", config.musicSelector.coldMusic.thirteen),
                 Map.entry("cat", config.musicSelector.coldMusic.cat),
-                Map.entry("blocks", config.musicSelector.coldMusic.blocks),
+                Map.entry("data/dynmus/tags/blocks", config.musicSelector.coldMusic.blocks),
                 Map.entry("chirp", config.musicSelector.coldMusic.chirp),
                 Map.entry("far", config.musicSelector.coldMusic.far),
                 Map.entry("mall", config.musicSelector.coldMusic.mall),
@@ -260,7 +260,7 @@ public class DynamicMusicHelper {
 
                 Map.entry("13", config.musicSelector.hotMusic.thirteen),
                 Map.entry("cat", config.musicSelector.hotMusic.cat),
-                Map.entry("blocks", config.musicSelector.hotMusic.blocks),
+                Map.entry("data/dynmus/tags/blocks", config.musicSelector.hotMusic.blocks),
                 Map.entry("chirp", config.musicSelector.hotMusic.chirp),
                 Map.entry("far", config.musicSelector.hotMusic.far),
                 Map.entry("mall", config.musicSelector.hotMusic.mall),
@@ -319,7 +319,7 @@ public class DynamicMusicHelper {
 
                 Map.entry("13", config.musicSelector.niceMusic.thirteen),
                 Map.entry("cat", config.musicSelector.niceMusic.cat),
-                Map.entry("blocks", config.musicSelector.niceMusic.blocks),
+                Map.entry("data/dynmus/tags/blocks", config.musicSelector.niceMusic.blocks),
                 Map.entry("chirp", config.musicSelector.niceMusic.chirp),
                 Map.entry("far", config.musicSelector.niceMusic.far),
                 Map.entry("mall", config.musicSelector.niceMusic.mall),
@@ -378,7 +378,7 @@ public class DynamicMusicHelper {
 
                 Map.entry("13", config.musicSelector.downMusic.thirteen),
                 Map.entry("cat", config.musicSelector.downMusic.cat),
-                Map.entry("blocks", config.musicSelector.downMusic.blocks),
+                Map.entry("data/dynmus/tags/blocks", config.musicSelector.downMusic.blocks),
                 Map.entry("chirp", config.musicSelector.downMusic.chirp),
                 Map.entry("far", config.musicSelector.downMusic.far),
                 Map.entry("mall", config.musicSelector.downMusic.mall),
@@ -437,7 +437,7 @@ public class DynamicMusicHelper {
 
                 Map.entry("13", config.musicSelector.endMusic.thirteen),
                 Map.entry("cat", config.musicSelector.endMusic.cat),
-                Map.entry("blocks", config.musicSelector.endMusic.blocks),
+                Map.entry("data/dynmus/tags/blocks", config.musicSelector.endMusic.blocks),
                 Map.entry("chirp", config.musicSelector.endMusic.chirp),
                 Map.entry("far", config.musicSelector.endMusic.far),
                 Map.entry("mall", config.musicSelector.endMusic.mall),

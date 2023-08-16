@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "#dynmus:ores",
+    "#dynmus:sculk",
+    "#dynmus:stone",
+    "minecraft:amethyst_block",
+    "minecraft:budding_amethyst",
+    "minecraft:cave_vines",
+    "minecraft:cave_vines_plant",
+    "minecraft:clay",
+    "minecraft:glow_lichen",
+    "minecraft:moss_block",
+    "minecraft:moss_carpet"
+  ]
+}

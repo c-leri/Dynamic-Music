@@ -10,8 +10,8 @@
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/dynamic-music-updated",
-    "sources": "https://github.com/celestomm/Dynamic-Music",
-    "issues": "https://github.com/celestomm/Dynamic-Music/issues"
+    "sources": "https://github.com/c-leri/Dynamic-Music",
+    "issues": "https://github.com/c-leri/Dynamic-Music/issues"
   },
   "license": "LGPLv3",
   "icon": "icon.png",

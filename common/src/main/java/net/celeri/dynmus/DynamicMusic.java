@@ -10,13 +10,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LayerLightEventListener;
 
-import java.util.List;
 import java.util.stream.IntStream;
 
 public class DynamicMusic {
@@ -68,13 +69,13 @@ public class DynamicMusic {
                     for (int z = -searchRange; z < searchRange; z++) {
                         BlockPos offsetPos = new BlockPos(pos).offset(x, y, z);
 
-                        Block block = level.getBlockState(offsetPos).getBlock();
+                        BlockState blockState = level.getBlockState(offsetPos);
 
-                        if (block == Blocks.AIR) {
+                        if (blockState.isAir()) {
                             airBlocks++;
 
                             lightSum += blockLightListener.getLightValue(offsetPos);
-                        } else if (block != Blocks.LAVA && block != Blocks.WATER) {
+                        } else if (!blockState.is(Blocks.LAVA) && !blockState.is(Blocks.WATER)) {
                             int biggestCoordinate = IntStream.of(x, y, z).max().getAsInt();
                             int smallestCoordinate = IntStream.of(x, y, z).min().getAsInt();
 
@@ -82,14 +83,14 @@ public class DynamicMusic {
                             if (smallestCoordinate > -caveSearchRange && biggestCoordinate < caveSearchRange) {
                                 caveAllSolidBlocks++;
 
-                                if (isCaveBlock(block)) caveBlocks++;
+                                if (isCaveBlock(blockState)) caveBlocks++;
                             }
 
                             // Coordinates within mineshaft search range
                             if (smallestCoordinate > -mineshaftSearchRange && biggestCoordinate < mineshaftSearchRange) {
                                 mineshaftAllSolidBlock++;
 
-                                if (isMineshaftBlock(block)) mineshaftBlocks++;
+                                if (isMineshaftBlock(blockState)) mineshaftBlocks++;
                             }
                         }
 
@@ -103,33 +104,16 @@ public class DynamicMusic {
         }
     }
 
-    private static final List<Block> caveBlocks = List.of(
-        Blocks.ANDESITE, Blocks.GRANITE, Blocks.DIORITE, Blocks.COBBLESTONE, Blocks.INFESTED_COBBLESTONE, Blocks.MOSSY_COBBLESTONE,
-        Blocks.TUFF, Blocks.CALCITE, Blocks.DRIPSTONE_BLOCK, Blocks.SANDSTONE, Blocks.RED_SANDSTONE, Blocks.DEEPSLATE,
-        Blocks.INFESTED_DEEPSLATE, Blocks.COBBLED_DEEPSLATE, Blocks.STONE, Blocks.INFESTED_STONE, Blocks.STONE_BRICKS,
-        Blocks.INFESTED_STONE_BRICKS, Blocks.BEDROCK, Blocks.OBSIDIAN, Blocks.SCULK, Blocks.SCULK_VEIN,
-        Blocks.AMETHYST_BLOCK, Blocks.AMETHYST_CLUSTER, Blocks.COAL_ORE, Blocks.COPPER_ORE, Blocks.IRON_ORE,
-        Blocks.GOLD_ORE, Blocks.EMERALD_ORE, Blocks.LAPIS_ORE, Blocks.REDSTONE_ORE, Blocks.DIAMOND_ORE,
-        Blocks.DEEPSLATE_COAL_ORE, Blocks.DEEPSLATE_COPPER_ORE, Blocks.DEEPSLATE_IRON_ORE, Blocks.DEEPSLATE_GOLD_ORE,
-        Blocks.DEEPSLATE_EMERALD_ORE, Blocks.DEEPSLATE_LAPIS_ORE, Blocks.DEEPSLATE_REDSTONE_ORE, Blocks.DEEPSLATE_DIAMOND_ORE,
-        Blocks.BASALT, Blocks.POLISHED_BASALT, Blocks.BLACKSTONE, Blocks.MAGMA_BLOCK, Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
-        Blocks.CLAY, Blocks.MOSS_BLOCK, Blocks.AZALEA, Blocks.FLOWERING_AZALEA
-    );
+    private static final TagKey<Block> caveBlocks = TagKey.create(Registries.BLOCK, new ResourceLocation(DynamicMusic.MOD_ID, "cave_blocks"));
 
-    private static boolean isCaveBlock(Block block) {
-        return caveBlocks.stream().anyMatch(caveBlock -> block == caveBlock);
+    private static boolean isCaveBlock(BlockState blockState) {
+        return blockState.getTags().anyMatch(tag -> tag == caveBlocks);
     }
 
-    private static final List<Block> mineshaftBlocks = List.of(
-        Blocks.OAK_PLANKS, Blocks.OAK_FENCE, Blocks.DARK_OAK_PLANKS, Blocks.DARK_OAK_FENCE,
-        Blocks.ACACIA_PLANKS, Blocks.ACACIA_FENCE, Blocks.BIRCH_PLANKS, Blocks.BIRCH_FENCE,
-        Blocks.CHERRY_PLANKS, Blocks.CHERRY_FENCE, Blocks.JUNGLE_PLANKS, Blocks.JUNGLE_FENCE,
-        Blocks.MANGROVE_PLANKS, Blocks.MANGROVE_FENCE, Blocks.SPRUCE_PLANKS, Blocks.SPRUCE_FENCE,
-        Blocks.RAIL
-    );
+    private static final TagKey<Block> mineshaftBlocks = TagKey.create(Registries.BLOCK, new ResourceLocation(DynamicMusic.MOD_ID, "mineshaft_blocks"));
 
-    private static boolean isMineshaftBlock(Block block) {
-        return mineshaftBlocks.stream().anyMatch(mineshaftBlock -> block == mineshaftBlock);
+    private static boolean isMineshaftBlock(BlockState blockState) {
+        return blockState.getTags().anyMatch(tag -> tag == mineshaftBlocks);
     }
 
     public static boolean isInCave() {

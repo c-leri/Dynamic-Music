@@ -17,6 +17,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -32,15 +33,17 @@ public class MinecraftClientMixin {
 
     @Shadow
     public ClientLevel level;
-    private static int tickCounter = 0;
+
+    @Unique
+    private static int dynmus$tickCounter = 0;
 
     @Inject(method = "tick", at = @At("RETURN"))
     private void dynmus$tick(CallbackInfo ci) {
-        tickCounter++;
+        dynmus$tickCounter++;
 
         // Execute cave detection algorithm every second
-        if (tickCounter >= 20 && level != null && player != null) {
-            tickCounter = 0;
+        if (dynmus$tickCounter >= 20 && level != null && player != null) {
+            dynmus$tickCounter = 0;
 
             DynamicMusic.tick(level, player.blockPosition());
         }

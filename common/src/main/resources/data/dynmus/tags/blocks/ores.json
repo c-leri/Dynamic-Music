@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#dynmus:ores/coal",
+    "#dynmus:ores/copper",
+    "#dynmus:ores/diamond",
+    "#dynmus:ores/emerald",
+    "#dynmus:ores/gold",
+    "#dynmus:ores/iron",
+    "#dynmus:ores/lapis",
+    "#dynmus:ores/redstone",
+    {
+      "id": "#c:ores",
+      "required": false
+    },
+    {
+      "id": "#forge:ores",
+      "required": false
+    }
+  ]
+}

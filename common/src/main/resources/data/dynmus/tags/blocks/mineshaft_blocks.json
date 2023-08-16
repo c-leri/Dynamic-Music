@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#dynmus:fences",
+    "#dynmus:planks",
+    "#dynmus:wooden_chests",
+    "#minecraft:rails",
+    "minecraft:cobweb"
+  ]
+}

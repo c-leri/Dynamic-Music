@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:terracotta",
+    "minecraft:andesite",
+    "minecraft:basalt",
+    "minecraft:bedrock",
+    "minecraft:blackstone",
+    "minecraft:calcite",
+    "minecraft:deepslate",
+    "minecraft:diorite",
+    "minecraft:dripstone_block",
+    "minecraft:granite",
+    "minecraft:infested_deepslate",
+    "minecraft:infested_stone",
+    "minecraft:magma_block",
+    "minecraft:obsidian",
+    "minecraft:red_sandstone",
+    "minecraft:sandstone",
+    "minecraft:stone",
+    "minecraft:tuff",
+    {
+      "id": "#c:stone",
+      "required": false
+    },
+    {
+      "id": "#forge:stone",
+      "required": false
+    }
+  ]
+}
